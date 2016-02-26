@@ -18,35 +18,23 @@
 			
 			    });
 			</script>
-<div  id="top" class="callbacks_container">
+<div  id="top" class="callbacks_container" style="margin-top:100px;">
 			      <ul class="rslides" id="slider4">
 			        <li>
 			          <img src="<?php echo base_url('_assets_/images/slide1.jpg');?>" alt="">
 			          <div class="caption">
 			          	<div class="slide-text-info">
 			          		<h1>providing</h1>
-			          		<label>highquality service for men &amp; women</label>
-			          		<a class="slide-btn" href="#">learn more</a>
+			          		<label>highquality education for Children</label>
 			          	</div>
 			          </div>
 			        </li>
 			        <li>
-			          <img src="<?php echo base_url('_assets_/images/slide1.jpg');?>" alt="">
+			          <img src="<?php echo base_url('_assets_/images/slide2.jpg');?>" alt="">
 			          <div class="caption">
 			          	<div class="slide-text-info">
 			          		<h1>providing</h1>
-			          		<label>highquality service for men &amp; women</label>
-			          		<a class="slide-btn" href="#">learn more</a>
-			          	</div>
-			          </div>
-			        </li>
-			        <li>
-			          <img src="<?php echo base_url('_assets_/images/slide1.jpg');?>" alt="">
-			           <div class="caption">
-			           	<div class="slide-text-info">
-			          		<h1>providing</h1>
-			          		<label>highquality service for men &amp; women</label>
-			          		<a class="slide-btn" href="#">learn more</a>
+			          		<label>highquality education for Children</label>
 			          	</div>
 			          </div>
 			        </li>

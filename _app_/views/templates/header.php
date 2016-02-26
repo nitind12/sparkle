@@ -42,19 +42,19 @@
 
 	</head>
 	<body>
-		<div id="home" class="header">
+		<div id="home" class="header navbar-fixed-top">
 					<div class="top-header">
 						<div class="container">
 						<div class="logo">
-							<a href="#"><img src="<?php echo base_url('_assets_/images/logo.png');?>" title="doctor" /></a>
+							<a href="#"><img src="<?php echo base_url('_assets_/images/logoSch.png');?>" title="doctor" class="img-responsive"/></a>
 						</div>
 						 <nav class="top-nav">
 							<ul class="top-nav">
-								<li class="active"><a href="#home" class="scroll">Home </a></li>
-								<li><a href="#about" class="scroll">About us</a></li>
-								<li><a href="#services" class="scroll">our services</a></li>
-								<li><a href="#team" class="scroll">our team</a></li>
-								<li><a href="#contact" class="scroll">Contact</a></li>
+								<li class="active"><a href="#" class="scroll">Home </a></li>
+								<li><a href="#" class="scroll">About us</a></li>
+								<li><a href="#" class="scroll">Admissions</a></li>
+								<li><a href="#" class="scroll">Features</a></li>
+								<li><a href="#" class="scroll">Contact</a></li>
 							</ul>
 							<a href="#" id="pull"><img src="<?php echo base_url('_assets_/images/menu-icon.png');?>" title="menu" /></a>
 						</nav>
