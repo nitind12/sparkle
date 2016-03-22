@@ -9,9 +9,9 @@ class Web extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
     function login(){
-        //$this->load->view('templates/header');
+        $this->load->view('templates/header');
         $this->load->view('login/lgn');
-        //$this->load->view('templates/footer');
+        $this->load->view('templates/footer');
     }
     function uc_() {
         $this->load->view('index');
