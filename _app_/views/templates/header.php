@@ -46,7 +46,7 @@
 					<div class="top-header">
 						<div class="container">
 						<div class="logo">
-							<a href="#"><img src="<?php echo base_url('_assets_/images/logoSch.png');?>" title="doctor" class="img-responsive"/></a>
+							<a href="#"><img src="<?php echo base_url('_assets_/images/logoSch.png');?>" title="Little Sparkle Academy" class="img-responsive"/></a>
 						</div>
 						 <nav class="top-nav">
 							<ul class="top-nav">
