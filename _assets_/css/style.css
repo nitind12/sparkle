@@ -1,9 +1,3 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
 html, body{
     font-family: 'Oswald', sans-serif;
     font-size: 100%;
@@ -406,6 +400,7 @@ div.slide-text-info {
     margin-top: 6em;
     margin-left: -3em;
 }
+
 /*----//slider----*/
 /*---- about ---*/
 .about{
@@ -1283,25 +1278,62 @@ div.slide-text-info {
 }
 
 #footer {
-        padding-top: 30px;
-        padding-bottom: 30px;
-        color: #bdc3c7;
-         background:url(../images/top-grid-info-bg-bl.png);
-    }
-    #footer a {
-        color: #bdc3c7;
-    }
-    #footer a:hover {
-        color: #d9534f;
-    }
-    #footer ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    #footer ul > li {
-        display: inline-block;
-        margin-left: 15px;
-    }
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #bdc3c7;
+    background:url(../images/top-grid-info-bg-bl.png);
+}
+#footer a {
+    color: #bdc3c7;
+}
+#footer a:hover {
+    color: #d9534f;
+}
+#footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#footer ul > li {
+    display: inline-block;
+    margin-left: 15px;
+}
 
+.page{
+    min-height: 290px;
+}
 
+.caption1 {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    font-size: 30px;
+    text-shadow: 1px 1px #ffcc00;
+    color: #d2322d;
+    left: 17%;
+    right: 0;
+    padding: 10px 100px;
+    margin: 0;
+    max-width: none;
+    top: 13%;
+}
+
+.slide-text-info1 h1{
+    font-size: 2.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0;
+    margin:0;
+    color: #d2322d;
+    font-weight: 900;
+    text-shadow: 2px 2px #F4BB36;
+}
+/*----*/
+.slide-text-info1 label{
+    color: gold;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: .7em;
+    display: block;
+    text-shadow: 1px 1px #d2322d;
+}
