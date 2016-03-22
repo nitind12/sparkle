@@ -10,6 +10,10 @@ html, body{
     background: #FFf;
 }
 body a{
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.1em;
+    margin: 0;
     transition:0.5s all;
     -webkit-transition:0.5s all;
     -moz-transition:0.5s all;
@@ -370,16 +374,18 @@ nav a#pull {
     text-transform: uppercase;
     padding: 0;
     margin:0;
-    color: #FFF;
+    color: #d2322d;
     font-weight: 900;
+    text-shadow: 2px 2px #F4BB36;
 }
 /*----*/
 .slide-text-info label{
-    color: #FFF;
+    color: gold;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1.2em;
     display: block;
+    text-shadow: 1px 1px #d2322d;
 }
 /*----*/
 .slide-btn{
@@ -406,15 +412,15 @@ div.slide-text-info {
     padding:3em 0;
 }
 .header h2{
-    color: #42B3E5;
-    font-size:3em;
+    color: #2C3E50;
+    font-size:2em;
     text-transform: uppercase;
     font-weight: 400;
     margin:0 0 0.2em 0;
 }
 .header p{
-    color: #737373;
-    font-weight: 400;
+    color: #555;
+    font-weight: 300;
     font-size: 1.1em;
     margin: 0;
 }
@@ -554,11 +560,12 @@ div.slide-text-info {
 }
 /*--- team ----*/
 .team{
-    padding: 3em 0 5em 0;
+    padding: 0 0 5em 0;
 }
 .team-member-grid{
     width:20%;
     float:left;
+    min-height: 450px;
     background:url(../images/top-grid-info-bg-b.png);
     transition:0.5s all;
     -webkit-transition:0.5s all;
@@ -577,11 +584,11 @@ div.slide-text-info {
     padding: 0.4em 1em;
     position: relative;
 }
-.team-member-info h3 a{
+.team-member-info h3{
     color:#FFF;
-    font-size:0.8em;
+    font-size:1.5em;
 }
-.team-member-info h3 a:hover{
+.team-member-info h3 :hover{
     text-decoration:none;
 }
 .team-member-info p{
