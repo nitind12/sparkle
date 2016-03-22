@@ -10,6 +10,7 @@ class Web extends CI_Controller {
 	}
     function login(){
         $this->load->view('templates/header');
+        $this -> load -> view ('templates/innerBanner');
         $this->load->view('login/lgn');
         $this->load->view('templates/footer');
     }

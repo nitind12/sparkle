@@ -2,7 +2,6 @@
     <div class="container">
         <div class="col-md-12 detail">  
             <h3 class="tittle">Login Please</h3>
-            <div class="col-sm-12">   
                 <div class="contact-form">
                     <div class="col-sm-6">  
                         <?php echo form_open('web/sign_in_', array('name' => "frmLogin_", 'id' => "frmLogin_", 'class' => 'comment-form-author', 'style' => 'width: 100%')); ?>
@@ -32,13 +31,14 @@
                                 'name' => 'txtPwd',
                                 'id' => 'txtPwd',
                                 'placeholder' => 'Password here...',
-                                'class' => 'search-text'
+                                'class' => 'search-text',
+                                'style' => 'width: 100%'
                             );
                             echo form_input($data);
                             ?>
                         </p>
                     </div>
-                    <div class="col-sm-6"></div>
+                    <div class="col-sm-6"> </div>
                     <div class="col-sm-6"> 
                         <div class="col-sm-6"> 
                             <p style="float: left; color: #ff0000" id="login_msg"></p>
@@ -74,6 +74,5 @@
                 <?php //$this->load->view('templates/imageCrousel');  ?>
             </div>        
             <div class="clearfix"> </div>
-        </div>
-    </div>
+        </div>    
 </div>

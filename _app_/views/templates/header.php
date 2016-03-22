@@ -50,11 +50,12 @@
 						</div>
 						 <nav class="top-nav">
 							<ul class="top-nav">
-								<li class="active"><a href="#" class="scroll">Home </a></li>
-								<li><a href="#" class="scroll">About us</a></li>
-								<li><a href="#" class="scroll">Admissions</a></li>
-								<li><a href="#" class="scroll">Features</a></li>
-								<li><a href="#" class="scroll">Contact</a></li>
+								<li class="active"><a href="<?php echo site_url('web/');?>">Home </a></li>
+								<li><a href="#">About us</a></li>
+								<li><a href="#">Admissions</a></li>
+								<li><a href="#">Features</a></li>
+								<li><a href="#">Contact</a></li>
+                                                                <li><a href="<?php echo site_url('web/login');?>">Login</a></li>
 							</ul>
 							<a href="#" id="pull"><img src="<?php echo base_url('_assets_/images/menu-icon.png');?>" title="menu" /></a>
 						</nav>
