@@ -4,8 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Web extends CI_Controller {
 	public function index()
 	{
+        $data['news_'] = $this->mm->get_latest_news(7);
+
 		$this->load->view('templates/header');
-		$this->load->view('home');
+		$this->load->view('home', $data);
 		$this->load->view('templates/footer');
 	}
     function login(){

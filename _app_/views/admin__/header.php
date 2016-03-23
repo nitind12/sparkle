@@ -9,7 +9,7 @@
     <meta name="description" content="Administration Panel, Admin, Administrator">
     <meta name="author" content="Mother India Global School, Uttarakhand">
 
-    <title>.: MIGS: Administration Panel :.</title>
+    <title>.: <?php echo _SCHOOL_ABREV_ ;?> : Administration Panel :.</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url('_assets_/admin_sources/bower_components/bootstrap/dist/css/bootstrap.min.css');?>" rel="stylesheet">

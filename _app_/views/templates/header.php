@@ -10,6 +10,7 @@
 		</script>
 		<script type="text/javascript" src="<?php echo base_url('_assets_/js/move-top.js');?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('_assets_/js/easing.js');?>"></script>
+
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		

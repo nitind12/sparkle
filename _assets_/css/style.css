@@ -418,6 +418,7 @@ div.slide-text-info {
     font-weight: 300;
     font-size: 1.1em;
     margin: 0;
+    text-align: justify;
 }
 .about-header{
     background:none;
