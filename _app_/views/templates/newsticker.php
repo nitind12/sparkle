@@ -11,7 +11,7 @@
                         pauseOnHover:true,
                         navigation: false,
                         direction: 'down',
-                        newsTickerInterval: 2000,
+                        newsTickerInterval: 3000,
                         onToDo: function () {
                             //console.log(this);
                         },
@@ -24,11 +24,11 @@
                         <ul class="demo1"> <!-- For News Ticker -->
                             <?php foreach($news_ as $item){ ?>
                                 <li class="news-item">
-                                    <div style="color: #0080f0"><?php echo $item->SUBJECT; ?></div>
+                                    <div style="color: #42B3E5"><?php echo $item->SUBJECT; ?></div>
                                     <div style="font-family: Arial;font-size: 15px;"><?php echo $item->NEWS; ?></div>
                                     <?php if($item->PATH_ATTACH != 'x'){ ?>
-                                    <div style="font-family: Arial; font-size: 8px; color: #ff0000">
-                                            <a href="<?php echo base_url('_assets_/newsdetail/'.$item->PATH_ATTACH);?>" style="color: #ff0000">more...</a>
+                                    <div style="font-family: Arial; font-size: 10px">
+                                            <a href="<?php echo base_url('_assets_/newsdetail/'.$item->PATH_ATTACH);?>" style="color: #ff5000" target="_blank">click here for detail...</a>
                                     </div>
                                     <?php } ?>
                                 </li>
