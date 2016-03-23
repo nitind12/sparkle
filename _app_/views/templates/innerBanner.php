@@ -5,8 +5,8 @@
             <img src="<?php echo base_url('_assets_/images/slide4.jpg'); ?>" alt="">
             <div class="caption1">
                 <div class="slide-text-info1">
-                    <h1>Login</h1>
-                    <label>Panel for updating dynamic content</label>
+                    <h1><?php echo $page_name; ?></h1>
+                    <label><?php echo $phrase_for_page; ?></label>
                 </div>
             </div>
         </li>
