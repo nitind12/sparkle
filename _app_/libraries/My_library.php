@@ -12,6 +12,14 @@ class My_library {
                 $data['page_phrase'] = 'We are bound to maintain academics';
                 $data['phrase_color'] = '#ffffff';
                 break;
+            case 3:
+                $data['tmp'] = 'Features of '. _SCHOOL_;
+                $data['keys_'] = 'Little, India, Academy, School, Sparkle, Little Sparkel Academy, Motahaldu, Haldwani';
+                $data['desc_'] = 'Motive is to improve and maintain core academics in order to facilitate development of concepts and ideas within the young creative minds.';
+                $data['pagename'] = 'Features';
+                $data['page_phrase'] = 'We emphasize delivering quality';
+                $data['phrase_color'] = '#ffffff';
+                break;
             case 4:
                 $data['tmp'] = 'Login';
                 $data['keys_'] = 'Login, Authentication, Address, Email, Little, India, Academy, School, Sparkle, Little Sparkel Academy, Motahaldu, Haldwani';
