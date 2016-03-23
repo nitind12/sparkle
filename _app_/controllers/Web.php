@@ -39,13 +39,7 @@ class Web extends CI_Controller {
         $this->load->view('inner', $data);
         $this->load->view('templates/footer');
     }
-
-    function login(){
-        $this->load->view('templates/header');
-        $this -> load -> view ('templates/innerBanner');
-        $this->load->view('login/lgn');
-        $this->load->view('templates/footer');
-    }
+    
     function uc_() {
         $this->load->view('index');
     }
@@ -59,5 +53,35 @@ class Web extends CI_Controller {
         } else {
             redirect('../');
         }
+    }
+    function contact_us(){
+        //-------------
+            $this->email->set_mailtype("html");
+
+            $msg_ = "<h2 style='color: #000090'>Enquiry from Contact Page: </h2> <br /><span style='font-size: 13px; color: #121212'>Name: ";
+            $msg_ = $msg_ . $this->input->post('txtName') . "<br /><br />";
+            $msg_ = $msg_ . "Contact: ";
+            $msg_ = $msg_ . $this->input->post('txtPh') . "<br />";
+            $msg_ = $msg_ . "Email ID: ";
+            $msg_ = $msg_ . $this->input->post('txtEmail') . "<br />";
+            $msg_ = $msg_ . "(Message): ";
+            $msg_ = $msg_ . $this->input->post('txtMsg') . "<br />";
+
+            $from_ = $this->input->post('txtEmail');
+            $name_ = $this->input->post('txtName');
+
+            $this->email->from($from_, $name_);
+            $this->email->to('enquiry@littlesparkleacademy.com');
+            $this->email->bcc('gdatt@gmail.com, nitin.d12gmail.com, navtewari@gmail.com');
+
+            $this->email->subject('Enquiry from Contact Page of ' . _SCHOOL_);
+            $this->email->message($msg_);
+
+            if($this->email->send()){
+                $this->session->set_flashdata('error_msg_', 'Thanks for Contacting us. We will get back to you soon...');
+            }
+
+        //-------------
+        redirect('/web/call_page/contact/contact/5');
     }
 }

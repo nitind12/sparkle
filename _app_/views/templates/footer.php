@@ -9,11 +9,12 @@
             </div>
             <div class="col-sm-5">
                 <ul class="pull-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Admissions</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="<?php echo site_url('web/');?>">Home </a></li>
+                    <li><a href="<?php echo site_url('web/call_page/about/about/1'); ?>">About us</a></li>
+                    <li><a href="<?php echo site_url('web/call_page/admission/admission/2'); ?>">Admissions</a></li>
+                    <li><a href="<?php echo site_url('web/call_page/features/features/3'); ?>">Features</a></li>
+                    <li><a href="<?php echo site_url('web/call_page/contact/contact/5'); ?>">Contact</a></li>
+                    <li><a href="<?php echo site_url('web/call_page/login/lgn/4'); ?>">Login</a></li>
                 </ul>
             </div>
         </div>

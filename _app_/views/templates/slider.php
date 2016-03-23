@@ -25,7 +25,7 @@
 			          <div class="caption">
 			          	<div class="slide-text-info">
 			          		<h1>providing</h1>
-			          		<label>highquality education for Children</label>
+			          		<label>high quality education for Children</label>
 			          	</div>
 			          </div>
 			        </li>
@@ -34,7 +34,7 @@
 			          <div class="caption">
 			          	<div class="slide-text-info">
 			          		<h1>providing</h1>
-			          		<label>highquality education for Children</label>
+			          		<label>high quality education for Children</label>
 			          	</div>
 			          </div>
 			        </li>
