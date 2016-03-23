@@ -23,6 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+$config['protocol'] 	= 'sendmail';
+$config['mailpath'] 	= '/usr/sbin/sendmail';
+$config['charset'] 		= 'iso-8859-1';
+$config['wordwrap'] 	= TRUE;
+
+//$config['base_url'] = 'http://www.littlesparkleacademy.com';
 $config['base_url'] = 'http://localhost/sparkle';
 
 /*

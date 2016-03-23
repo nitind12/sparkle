@@ -71,14 +71,16 @@ class Web extends CI_Controller {
             $name_ = $this->input->post('txtName');
 
             $this->email->from($from_, $name_);
-            $this->email->to('enquiry@littlesparkleacademy.com');
-            $this->email->bcc('gdatt@gmail.com, nitin.d12gmail.com, navtewari@gmail.com');
+            $this->email->to('nitin.d12@gmail.com');
+            $this->email->bcc('gdatt@gmail.com, navtewari@gmail.com');
 
-            $this->email->subject('Enquiry from Contact Page of ' . _SCHOOL_);
+            $this->email->subject('Enquiry from Contact Page of Little Sparke Academy website');
             $this->email->message($msg_);
 
             if($this->email->send()){
                 $this->session->set_flashdata('error_msg_', 'Thanks for Contacting us. We will get back to you soon...');
+            } else {
+                $this->session->set_flashdata('error_msg_', 'Something goes wrong. please try again...');
             }
 
         //-------------
