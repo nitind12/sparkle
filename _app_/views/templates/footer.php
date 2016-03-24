@@ -20,5 +20,6 @@
         </div>
     </div>
 </footer><!--/#footer-->
+<script src="<?php echo base_url('_assets_/js/jquery.flexisel.js');?>"></script>
 </body>
 </html>

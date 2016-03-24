@@ -6,20 +6,24 @@
         <!--- teammember-grids ---->
         <div class="team-member-grids">
             <div class="team-member-grid">
-                <img src="<?php echo base_url('_assets_/images/t1.jpg'); ?>" title="name" />
+                <a href="<?php echo site_url('web/call_page/message/directorMsg/8'); ?>">
+                    <img src="<?php echo base_url('_assets_/images/t1.jpg'); ?>" title="name" /></a>
                 <div class="team-member-info bottom-t-info">
                     <span> </span>
                     <h3>Director's Message</h3>
-                    <p>Our vision is of a natural, holistic, student-centered learning environment that empowers and inspires our students to be creative. The Mission of our School is to ... </p>
+                    <p>Our vision is of a natural, holistic, student-centered learning environment that empowers and inspires our students to be creative. The Mission of our School is to ... 
+                    <a href="<?php echo site_url('web/call_page/message/directorMsg/8'); ?>" style="text-decoration: none; color:yellow;">More...</a></p>
                 </div>
             </div>
             <div class="team-member-grid">
                 <div class="team-member-info bottom-t-info bottom-t-info-b">
                     <span> </span>
                     <h3>Principal's Message</h3>
-                    <p>Globalization demands a new dimension to our approach to education. We, thus have to recognize the need for a globally relevant education. Such an education would mean imparting skills that would develop...</p>
+                    <p>Globalization demands a new dimension to our approach to education. We, thus have to recognize the need for a globally relevant education. Such an education would mean imparting skills that would develop...
+                    <a href="<?php echo site_url('web/call_page/message/principalMsg/8'); ?>" style="text-decoration: none; color:yellow;">More...</a></p></p>
                 </div>
-                <img src="<?php echo base_url('_assets_/images/t2.jpg'); ?>" title="name" />
+                <a href="<?php echo site_url('web/call_page/message/principalMsg/8'); ?>">
+                    <img src="<?php echo base_url('_assets_/images/t2.jpg'); ?>" title="name" /></a>
             </div>
             <div class="team-member-grid">
                 <img src="<?php echo base_url('_assets_/images/t3.jpg'); ?>" title="name" />
@@ -42,11 +46,13 @@
                 <img src="<?php echo base_url('_assets_/images/t4.jpg'); ?>" title="name" style="margin-top:48px;"/>
             </div>
             <div class="team-member-grid">
-                <img src="<?php echo base_url('_assets_/images/t5.jpg'); ?>" title="name" />
+                <a href="<?php echo site_url('web/call_page/gallery/index/6'); ?>" style="text-decoration: none">
+                <img src="<?php echo base_url('_assets_/images/t5.jpg'); ?>" title="name" /></a>
                 <div class="team-member-info bottom-t-info">
                     <span> </span>
-                    <h3>PhotoGallery</h3>
-                    <p>Here you will find a large collection of some of our best photos to give you a peek at some of our amazing infrastructure, a sense of the activities within.</p>
+                    <h3>Photo-Gallery</h3>
+                    <p>Here you will find a large collection of some of our best photos to give you a peek at some of our amazing infrastructure, a sense of the activities within. 
+                        <a href="<?php echo site_url('web/call_page/gallery/index/6'); ?>" style="text-decoration: none; color:yellow;">See Gallery</a></p>
                 </div>
             </div>
             <div class="clearfix"> </div>

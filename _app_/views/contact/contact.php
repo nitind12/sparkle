@@ -15,9 +15,9 @@
                     <div class="box">
                         <p class="marTop9">
                             <b>School Campus:</b> <br />
-                            Little Sparkle Academy<br />, <br /> 
-                            ,<br />
-                            Bareilly Road, Motahaldu.
+                            Little Sparkle Academy<br />
+                            Bareilly Road, Motahaldu<br />
+                            Haldwani, Nainital, Uttarakhand
                         </p>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
         <div class="row">
         <div class="map">
             <h2>How to find us</h2>
-           <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="530" height="300" src="https://maps.google.com/maps?hl=en&q=Mother India Public School<br>NH-74, Doraha, Bazpur, U.S.Nagar, Uttarakhand 262401, India&ie=UTF8&t=roadmap&z=6&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div><div><small><a href="https://ww.premiumlinkgenerator.com/">premium link generator</a></small></div></iframe>
+           <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:1150px;"><div id="gmap_canvas" style="height:500px;width:1200px;"><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://wpzio.com" id="get-map-data">wpzio wordpress themes</a></div></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:11,center:new google.maps.LatLng(28.8616408,79.51582880000001),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.8616408, 79.51582880000001)});infowindow = new google.maps.InfoWindow({content:"<b>Sparkle Academy</b><br/>Bareilly Road, Motahaldu<br/> Haldwani" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
         </div>
     </div>
     <div class="clearfix" style="padding: 15px"></div>

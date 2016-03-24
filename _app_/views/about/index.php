@@ -24,14 +24,16 @@
                 </div>
             </div>
             <div class="col-md-4">
+                <a href="<?php echo site_url('web/call_page/kidsCorner/index/7'); ?>">
                 <div class="about-grid n-about-grid n-about-grid1">
                     <img src="<?php echo base_url('_assets_/images/img2.jpg'); ?>" title="name" />
                     <span class="t-icon1"> </span>
                     <div class="about-grid-info text-center">
-                        <h3><a href="#">Kid's Corner</a></h3>
+                        <h3><a href="<?php echo site_url('web/call_page/kidsCorner/index/7'); ?>">Kid's Corner</a></h3>
                         <p>It is a great pleasure to share stuff created by our Kid's. A cool Place for Kids!  Hang out and play some games or maybe find that site for your latest homework project.</p>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-md-4">
                 <div class="about-grid n-about-grid n-about-grid2">
