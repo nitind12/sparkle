@@ -80,10 +80,12 @@ class Admin_ extends CI_Controller {
         $data['user___'] = $this->session->userdata('ussr_');
         $data['bday_'] = $this->mm->get_all_bdays();
         $data['today_'] = $this->mm->students_bday_today();
+        $data['deactivebday_'] = $this->mm->get_all_bdays_deactivated();
         $data['folder_'] = 'bday';
         $data['page_head'] = 'Feed Birthday';
         $data['view1'] = 'viewbday_active';
         $data['view2'] = 'viewbday_deactive';
+        $data['view3'] = 'viewbday_deactivated';
         $this->load->view('admin__/header');
         $this->load->view('admin__/inner', $data);   
         $this->load->view('admin__/footer');
@@ -92,5 +94,43 @@ class Admin_ extends CI_Controller {
         $res_ = $this->mm->feedBday_();
         $this->session->set_flashdata('feed_bday_msg_',  $res_['msg_']);
     redirect('admin_/bDay');
+    }
+    function active_deactive_bday($bid__, $status_){
+        $res_ = $this->mm->active_deactive_bday($bid__, $status_);
+        $this->session->set_flashdata('feed_msg_',  $res_['msg_']);
+        
+        redirect('admin_/bDay/'.$bid__);
+    }
+    function edit_bday($bid__){
+        $data['record_'] = $this->mm->getbdayData($bid__);
+
+        $data['user___'] = $this->session->userdata('ussr_');
+        $data['bday_'] = $this->mm->get_all_bdays();
+        $data['today_'] = $this->mm->students_bday_today();
+        $data['deactivebday_'] = $this->mm->get_all_bdays_deactivated();
+        $data['folder_'] = 'bday';
+        $data['page_head'] = 'Update Birthday';
+        $data['view1'] = 'viewbday_active';
+        $data['view2'] = 'viewbday_deactive';
+        $data['view3'] = 'viewbday_deactivated';
+        $this->load->view('admin__/header');
+        $this->load->view('admin__/editbday', $data);   
+        $this->load->view('admin__/footer');   
+    }
+    function updateBday($bid__){
+        $res_ = $this->mm->update_bday($bid__);
+        $this->session->set_flashdata('feed_msg_',  $res_['msg_']);
+        
+        redirect('admin_/edit_bday/'.$bid__);
+    }
+    function delete_bday($bid__){
+        $res_ = $this->mm->delete_bday($bid__);
+        if($res_ == TRUE){
+            $this->session->set_flashdata('feed_msg_',  'Data deleted Successfully !!');
+        } else {
+            $this->session->set_flashdata('feed_msg_',  'Server Error!! Data not deleted. PLease try again !!');
+        }
+        
+        redirect('admin_/bDay');   
     }
 }

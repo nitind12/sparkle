@@ -14,6 +14,15 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $item->BID; ?>"><?php echo $item->NAME_; ?></a>
+                                <div style="float: right">
+                                    <?php echo anchor('admin_/delete_bday/' . $item->BID, '<span style="font-size: 11px; color: #ff0000; font-weight: bold; background: #ffff00; padding: 2px">Delete</span>', array('style' => 'float: right')); ?>
+                                </div>
+                                <div style="float: right">
+                                    <?php echo anchor('admin_/edit_bday/' . $item->BID, '<span style="font-size: 11px; color: #009000; background: #ffff00; padding: 2px">Edit</span>', array('style' => 'float: right')); ?>
+                                </div>
+                                <div style="float: right">
+                                    <?php echo anchor('admin_/active_deactive_bday/' . $item->BID. '/0', '<span style="font-size: 11px; color: #ffffff; background: #808080; padding: 2px">Deactive</span>', array('style' => 'float: right')); ?>
+                                </div>
                             </h4>
                             
                         </div>

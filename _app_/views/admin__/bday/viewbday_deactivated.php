@@ -1,15 +1,15 @@
 <div class="col-lg-6">
     <div class="panel panel-default"<?php echo $style_; ?>>
         <div class="panel-heading">
-            All Active Birthdays
+            All De-Activated Birthdays
         </div>
         <!-- .panel-heading -->
         <div class="panel-body">
-            <?php $cnt_ = count($bday_); ?>
+            <?php $cnt_ = count($deactivebday_); ?>
             <?php if ($cnt_ != 0) { ?>
             <div class="panel-group" id="accordion1">
                 <?php $loop1 = 1; ?>
-                <?php foreach ($bday_ as $item) { ?>
+                <?php foreach ($deactivebday_ as $item) { ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -21,7 +21,7 @@
                                     <?php echo anchor('admin_/edit_bday/' . $item->BID, '<span style="font-size: 11px; color: #009000; background: #ffff00; padding: 2px">Edit</span>', array('style' => 'float: right')); ?>
                                 </div>
                                 <div style="float: right">
-                                    <?php echo anchor('admin_/active_deactive_bday/' . $item->BID. '/0', '<span style="font-size: 11px; color: #ffffff; background: #808080; padding: 2px">Deactive</span>', array('style' => 'float: right')); ?>
+                                    <?php echo anchor('admin_/active_deactive_bday/' . $item->BID. '/1', '<span style="font-size: 11px; color: #ffffff; background: #808080; padding: 2px">Active</span>', array('style' => 'float: right')); ?>
                                 </div>
                             </h4>
                             

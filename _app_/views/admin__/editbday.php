@@ -12,7 +12,7 @@
             <!-- /.row -->
             <div class="row">
                 <?php $data['style_'] = ' style="height: 400px; overflow: auto"'; ?>
-            <?php $this->load->view('admin__/'.$folder_.'/feedbday',$data); ?>
+            <?php $this->load->view('admin__/'.$folder_.'/editbday',$data); ?>
             </div>
             <div class="row">
                 <div class="col-lg-12" style="color: #ff0000; padding: 3px; text-align: center">
