@@ -15,6 +15,7 @@
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $item->ID; ?>"><?php echo $loop1; ?>. <?php echo $item->SUBJECT; ?></a>
                                 <?php echo anchor('admin_/active_deactive_news/'.$item->ID.'/0', '<span style="font-size: 11px; color: #ff0000; background: #ffff00; padding: 2px">Deactivate</span>', array('style'=>'float: right')); ?>
+                                
                             </h4>
                             
                         </div>
