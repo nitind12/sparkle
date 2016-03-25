@@ -45,6 +45,7 @@ class My_model extends CI_Model {
         $this->db->where('MONTH(DOB)', $mnth_);
         $this->db->where('DAY(DOB)', $dt_);
         $this->db->where('STATUS', 1);
+        $this->db->order_by('NAME_');
         $query = $this->db->get('bday_data');
 
         return $query->result();
@@ -367,7 +368,7 @@ class My_model extends CI_Model {
         $bool_ = $this->db->delete('bday_data');
         if ($bool_ == TRUE) {
             if ($file__ != 'x') {
-                echo $full_path_ =  FCPATH . '_assets_/stud_photo/' . $file__;
+                $full_path_ =  FCPATH . '_assets_/stud_photo/' . $file__;
                 @unlink($full_path_);
             }
         }

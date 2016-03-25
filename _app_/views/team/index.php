@@ -30,7 +30,41 @@
                 <div class="team-member-info bottom-t-info">
                     <span> </span>
                     <h3>Happy Birthday</h3>
+                    <script>
+                        $(function () {
+
+                          $("#slider5").responsiveSlides({
+                            auto: true,
+                            pager: true,
+                            nav: false,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+                              $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                              $('.events').append("<li>after event fired.</li>");
+                            }
+                          });
+                    
+                        });
+                    </script>
+                    <?php if(count($bday_) !=0) { ?>
+                    <div  id="top" class="callbacks_container" align="center">
+                        <ul class="rslides" id="slider5">
+                            <?php foreach ($bday_ as $item) { ?>
+                                <li>
+                                    <div class="banner-bg-bday img-rounded" style="color: #ffffff">
+                                        <img src="<?php echo base_url('_assets_/stud_photo/' . $item->PHOTO_); ?>" style="width: 97px" />
+                                        <?php echo $item->NAME_; ?>
+                                    </div>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <?php } else { ?>
                     <p>Wishing you a Happy Birthday. May GOD bless you all the days you live.</p>
+                    <?php } ?>
                 </div>
             </div>
             <div class="team-member-grid">

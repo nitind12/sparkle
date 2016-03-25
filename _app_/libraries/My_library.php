@@ -87,6 +87,9 @@ class My_library {
             case 2:
                 $tmp = "about";
                 break;
+            case 3:
+                $tmp = "gallery";
+                break;
             case 4:
                 $tmp = "login";
                 break;
