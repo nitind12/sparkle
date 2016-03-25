@@ -12,6 +12,14 @@ class My_library {
                 $data['page_phrase'] = 'We are bound to maintain academics';
                 $data['phrase_color'] = '#ffffff';
                 break;
+            case 2:
+                $data['tmp'] = 'Admission in '. _SCHOOL_;
+                $data['keys_'] = 'Little, India, Academy, School, Sparkle, Little Sparkel Academy, Motahaldu, Haldwani';
+                $data['desc_'] = 'Motive is to improve and maintain core academics in order to facilitate development of concepts and ideas within the young creative minds.';
+                $data['pagename'] = 'Admission';
+                $data['page_phrase'] = 'We emphasize delivering quality';
+                $data['phrase_color'] = '#ffffff';
+                break;
             case 3:
                 $data['tmp'] = 'Features of '. _SCHOOL_;
                 $data['keys_'] = 'Little, India, Academy, School, Sparkle, Little Sparkel Academy, Motahaldu, Haldwani';
@@ -74,6 +82,9 @@ class My_library {
     function image_for_page($value_) {
         switch ($value_) {
             case 1:
+                $tmp = "about";
+                break;
+            case 2:
                 $tmp = "about";
                 break;
             case 4:

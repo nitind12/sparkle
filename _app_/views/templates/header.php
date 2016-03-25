@@ -19,6 +19,7 @@
         </script>
         <link href="<?php echo base_url('_assets_/css/bootstrap.css'); ?>" rel='stylesheet' type='text/css' />
         <script src="<?php echo base_url('_assets_/js/jquery.min.js'); ?>"></script>
+        <script src="<?php echo base_url('_assets_/js/bootstrap.min.js'); ?>"></script>
         <link href="<?php echo base_url('_assets_/css/style.css'); ?>" rel='stylesheet' type='text/css' />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
