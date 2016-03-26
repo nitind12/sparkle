@@ -33,7 +33,7 @@
 
                 <div class="col_2" style="vertical-align: top">
                     <i class="fa fa-phone  icon2"></i>
-                    <div class="box">
+                    <div class="box" style="visibility: hidden">
                         <p class="marTop9" style="padding-top: 20px;">+91 0000000000</p>
                         <p class="marTop9" style="padding-top: 20px; visibility: hidden">+91 0000000000, +91 0000000000</p>
                     </div>
