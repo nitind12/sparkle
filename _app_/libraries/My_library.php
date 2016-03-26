@@ -106,7 +106,7 @@ class My_library {
                 $tmp = "message";
                 break;
             default:
-                $tmp = "noimage";
+                $tmp = "about";
         }
         return $tmp;
     }
