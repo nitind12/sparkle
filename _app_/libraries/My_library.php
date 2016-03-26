@@ -102,6 +102,9 @@ class My_library {
             case 7:
                 $tmp = "gallery";
                 break;
+            case 8:
+                $tmp = "message";
+                break;
             default:
                 $tmp = "noimage";
         }
