@@ -4,7 +4,7 @@
             <div class="col-md-8">
                 <h1>FEATURES</h1>
             <h4 style="font-weight:bold;margin-top:30px;">The salient features of our institution include the following – </h4>
-            <div class="col-md-12">
+            <div class="col-md-12" style="font-family: Arial">
                 <ul class="">
                     <li>The school is a part of a <b>2 decade</b> old Group reckoned for trust and quality </li>
                     <li>Lush <span style="color: #009000">Green</span> Campus </li>

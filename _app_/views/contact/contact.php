@@ -14,10 +14,19 @@
                     <i class="fa fa-home  icon2"></i>
                     <div class="box">
                         <p class="marTop9">
-                            <b>School Campus:</b> <br />
-                            Little Sparkle Academy<br />
-                            Bareilly Road, Motahaldu<br />
-                            Haldwani, Nainital, Uttarakhand
+                            <b>Visit to our School Campus at:</b> <br />
+                            <span style="font-family: Arial">
+                                Little Sparkle Academy<br />
+                                Bareilly Road, Motahaldu<br />
+                                Haldwani, Nainital, Uttarakhand
+                            </span>
+                        </p>
+                        <p>
+                            <b>You can e-mail us at: </b><br />
+                            <span style="font-family: Arial">
+                                For any information: <span style="color: #0000ff">info@littlesparkleacademy.com</span><br />
+                                For enquiry: <span style="color: #0000ff">enquiry@littlesparkleacademy.com</span>
+                            </span>
                         </p>
                     </div>
                 </div>
