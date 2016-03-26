@@ -67,7 +67,7 @@
                 </div>
                 <nav class="top-nav">
                     <ul class="top-nav">
-                        <li class="active"><a href="<?php echo site_url('web/'); ?>">Home </a></li>
+                        <li><a href="<?php echo site_url('web/'); ?>">Home </a></li>
                         <li><a href="<?php echo site_url('web/call_page/about/about/1'); ?>">About us</a></li>
                         <li><a href="<?php echo site_url('web/call_page/admission/admission/2'); ?>">Admissions</a></li>
                         <li><a href="<?php echo site_url('web/call_page/features/features/3'); ?>">Features</a></li>
