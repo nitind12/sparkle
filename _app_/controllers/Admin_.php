@@ -133,4 +133,20 @@ class Admin_ extends CI_Controller {
         
         redirect('admin_/bDay');   
     }
+    function galleryCategory(){
+        $data['category_'] = $this->mm->galleryCategory();
+
+        $data['user___'] = $this->session->userdata('ussr_');
+        $data['bday_'] = $this->mm->get_all_bdays();
+        $data['today_'] = $this->mm->students_bday_today();
+        $data['deactivebday_'] = $this->mm->get_all_bdays_deactivated();
+        $data['folder_'] = 'bday';
+        $data['page_head'] = 'Feed Gallery Category';
+        $data['view1'] = 'viewgallery_active';
+        $data['view2'] = 'viewgallery_deactive';
+        $data['view3'] = 'viewbday_deactivated';
+        $this->load->view('admin__/header');
+        $this->load->view('admin__/inner', $data);   
+        $this->load->view('admin__/footer');
+    }
 }
