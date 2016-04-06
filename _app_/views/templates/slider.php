@@ -38,6 +38,24 @@
 			          	</div>
 			          </div>
 			        </li>
+                                <li>
+			          <img src="<?php echo base_url('_assets_/images/slide6.jpg');?>" alt="">
+			          <div class="caption">
+			          	<div class="slide-text-info">
+			          		<h1>providing</h1>
+			          		<label>high quality education for Children</label>
+			          	</div>
+			          </div>
+			        </li>
+                                <li>
+			          <img src="<?php echo base_url('_assets_/images/slide3.jpg');?>" alt="">
+			          <div class="caption">
+			          	<div class="slide-text-info">
+			          		<h1>providing</h1>
+			          		<label>high quality education for Children</label>
+			          	</div>
+			          </div>
+			        </li>
 			      </ul>
 			    </div>
 			    <div class="clearfix"> </div>
