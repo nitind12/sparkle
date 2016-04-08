@@ -45,7 +45,7 @@
                                 <div class="panel-heading" role="tab" id="headingTwo">
                                     <h4 class="panel-title">
                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            <h4 style="font-weight:bold;"><i class="fa fa-bullseye icon_3"></i> For Class 1<sup>st</sup> till 7<sup>th</sup> </h4>
+                                            <h4 style="font-weight:bold;"><i class="fa fa-bullseye icon_3"></i> For Class 1<sup>st</sup> till 8<sup>th</sup> </h4>
                                         </a>
                                     </h4>
                                 </div>
@@ -54,7 +54,7 @@
                                         <ol class="margin-top:20px">
                                             <li>Parents are requested to fill the registration form and submit in the school office.</li>
                                             <li>Students will appear for an General Aptitude Test. Dates to test will be informed once scholar is registered.</li>
-                                            <li>Once GAT is cleared, student can take admission by submitting the Admission form along with necessary documents and fees in the school office.( Prospectus & Admission form can be obtained from school office).</li>
+                                            <li>Once GAT is cleared, student can take admission by submitting the Admission form along with necessary documents and fees in the school office.( Prospectus &amp; Admission form can be obtained from school office).</li>
                                         </ol>
                                         <h4 style="margin-top:30px;margin-left:20px;font-weight:bold;">Documents to be submitted along with admission form are:</h4>
                                         <ol>
