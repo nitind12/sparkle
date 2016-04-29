@@ -522,6 +522,7 @@ Customized Definitions --------------------->>>>>
 */
 define('_SCHOOL_', "Little Sparke Academy, Motahaldu");
 define('_SCHOOL_ABREV_', "LSA");
+define('ADMIN___', $config['base_url'].'/admin__');
 /*
 -------------------------------------------->>>>>
 */

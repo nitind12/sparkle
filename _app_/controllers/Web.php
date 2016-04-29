@@ -53,7 +53,7 @@ class Web extends CI_Controller {
         if ($res_['bool_'] == TRUE) {
             $this->session->set_userdata('ussr_', $this->input->post('txtUsr'));
             $this->session->set_userdata('stss_', $res_['sts_']);
-            redirect('/admin_');
+            redirect(ADMIN___);
         } else {
             redirect('../');
         }
