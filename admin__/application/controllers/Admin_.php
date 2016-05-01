@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin_ extends CI_Controller {
     function __construct() {
         parent::__construct();
-        if(! $this->session->userdata('ussr_')){ redirect ('localhost/sparkle/index.php/web/call_page/login/lgn/4'); }
+        if(! $this->session->userdata('ussr_')){ redirect (__BACKTOSITE__); }
     }
     function index(){
         $data['user___'] = $this->session->userdata('ussr_');
@@ -28,7 +28,11 @@ class Admin_ extends CI_Controller {
         $data['user___'] = $this->session->userdata('ussr_');
         $data['news_'] = $this->mm->get_all_news();
         $data['news_d'] = $this->mm->get_all_news_deactive();
-        
+        $data['edit_page_heading'] = 'Update News &amp; Events';
+        $data['edit_page'] = "newsevents/editnews";
+        $data['view1'] = "newsevents/viewnews_active"; 
+        $data['view2'] = "newsevents/viewnews_deactive";
+
         $this->load->view('templates/header');
         $this->load->view('edit', $data);   
         $this->load->view('templates/footer');
@@ -82,6 +86,7 @@ class Admin_ extends CI_Controller {
         $data['today_'] = $this->mm->students_bday_today();
         $data['deactivebday_'] = $this->mm->get_all_bdays_deactivated();
         $data['folder_'] = 'bday';
+        $data['page__'] = 'feedbday';
         $data['page_head'] = 'Feed Birthday';
         $data['view1'] = 'viewbday_active';
         $data['view2'] = 'viewbday_deactive';
@@ -92,7 +97,7 @@ class Admin_ extends CI_Controller {
     }
     function feedBday(){
         $res_ = $this->mm->feedBday_();
-        $this->session->set_flashdata('feed_bday_msg_',  $res_['msg_']);
+        $this->session->set_flashdata('_msg_',  $res_['msg_']);
     redirect('admin_/bDay');
     }
     function active_deactive_bday($bid__, $status_){
@@ -148,5 +153,68 @@ class Admin_ extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view('inner', $data);   
         $this->load->view('templates/footer');
+    }
+    function newsletters(){
+        $data['user___'] = $this->session->userdata('ussr_');
+        $data['newsletter_'] = $this->mm->get_active_newsletter();
+        $data['newsletter_d'] = $this->mm->get_deactive_newsletter();
+        $data['folder_'] = 'newsletter';
+        $data['page__'] = 'feednewsletter';
+        $data['page_head'] = 'Upload &amp; Manage Newsletters';
+        $data['view1'] = 'viewnewsletter_active';
+        $data['view2'] = 'viewnewsletter_deactive';
+
+        $this->load->view('templates/header');
+        $this->load->view('inner', $data);   
+        $this->load->view('templates/footer');
+    }
+    function upload_newsletter(){
+        $res_ = $this->mm->upload_newsletter();
+        $this->session->set_flashdata('_msg_',  $res_['msg_']);
+    redirect('admin_/newsletters');
+    }
+    function active_deactive_newsletter($id_, $status_){
+        $res_ = $this->mm->active_deactive_newsletter($id_, $status_);
+        if($res_ == TRUE){
+            if($status_ == 1){
+                $this->session->set_flashdata('error_msg_', 'News Activated Successfully');
+            } else {
+                $this->session->set_flashdata('error_msg_', 'News Deactivated Successfully');
+            }
+        } else {
+            $this->session->set_flashdata('error_msg_',  'Something went wrong. Please try again !!');
+        }
+        redirect('admin_/newsletters');
+    }
+    function edit_newsletter($id__){
+        $data['user___'] = $this->session->userdata('ussr_');
+        $data['newsletter_edit'] = $this->mm->get_newsletter_for_edit($id__);
+        $data['newsletter_'] = $this->mm->get_active_newsletter();
+        $data['newsletter_d'] = $this->mm->get_deactive_newsletter();
+        $data['edit_page_heading'] = 'Update Newsletter';
+        $data['folder_'] = 'newsletter';
+        $data['page__'] = 'feednewsletter';
+        $data['page_head'] = 'Upload &amp; Manage Newsletters';
+        $data['edit_page'] = "newsletter/editnewsletter";
+
+        $data['view1'] = 'newsletter/viewnewsletter_active';
+        $data['view2'] = 'newsletter/viewnewsletter_deactive';
+        $this->load->view('templates/header');
+        $this->load->view('edit', $data);   
+        $this->load->view('templates/footer');
+    }
+    function update_newsletter($id__){
+        $res_ = $this->mm->updateNewsletter_($id__);
+        echo $this->session->set_flashdata('error_msg_',  $res_['msg_']);
+    redirect('admin_/edit_newsletter/'.$id__);
+    }
+    function delete_newsletter($id_){
+        $res_ = $this->mm->delete_newsletter($id_);
+        if($res_ == TRUE){
+            $this->session->set_flashdata('error_msg_', 'Newsletter deleted Successfully');
+        } else {
+            $this->session->set_flashdata('error_msg_',  'Something went wrong. Please try again !!');
+        }
+        redirect('admin_/newsletters');
     }
 }

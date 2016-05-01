@@ -19,14 +19,8 @@
                             <a href="<?php echo site_url('admin_/bDay'); ?>"><i class="fa fa-dashboard fa-fw"></i> Feed B'Day</a>
                         </li>
                         <li>
-                            <a href="<?php echo site_url('admin_/galleryCategory'); ?>"><i class="fa fa-dashboard fa-fw"></i> Feed Gallery Category</a>
+                            <a href="<?php echo site_url('admin_/newsletters'); ?>"><i class="fa fa-dashboard fa-fw"></i> Manage Newsletters</a>
                         </li>
-                        <li>
-                            <a href="<?php echo site_url('admin_/bDay'); ?>"><i class="fa fa-dashboard fa-fw"></i> Feed Gallery</a>
-                        </li>
-                       <!-- <li>
-                            <a href="<?php //echo site_url('admin_/uploadNotices'); ?>"><i class="fa fa-dashboard fa-fw"></i> Upload Notices</a>
-                        </li>-->
                     </ul>
                 </div>
             </div>

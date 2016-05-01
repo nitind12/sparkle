@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2016 at 10:46 AM
+-- Generation Time: May 01, 2016 at 07:56 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 7.0.1
 
@@ -35,6 +35,15 @@ CREATE TABLE `bday_data` (
   `STATUS` int(11) NOT NULL,
   `USERNAME_` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `bday_data`
+--
+
+INSERT INTO `bday_data` (`BID`, `NAME_`, `DOB`, `PHOTO_`, `DOA`, `STATUS`, `USERNAME_`) VALUES
+(1, 'Nitin Deepak', '2016-03-25', '1.png', '2016-03-25 12:14:06', 1, 'nitin'),
+(3, 'Mukesh Joshi', '1981-11-28', 'x', '2016-04-29 07:32:21', 1, 'nitin'),
+(4, 'cscvad', '2015-11-30', 'x', '2016-05-01 02:13:22', 1, 'nitin');
 
 -- --------------------------------------------------------
 
@@ -373,6 +382,32 @@ INSERT INTO `fee` (`feeID`, `regID`, `date`, `Amount`, `username`, `feetype`, `f
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `GL_ID` int(11) NOT NULL,
+  `PHOTO_` varchar(250) NOT NULL,
+  `TITLE_` varchar(250) NOT NULL,
+  `WIDTH_` int(11) NOT NULL,
+  `HEIGHT_` int(11) NOT NULL,
+  `CATEG_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery_category`
+--
+
+CREATE TABLE `gallery_category` (
+  `CATEG_ID` int(11) NOT NULL,
+  `CATEGORY` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login`
 --
 
@@ -423,6 +458,53 @@ CREATE TABLE `newsevents` (
   `STATUS` int(11) NOT NULL DEFAULT '1',
   `USERNAME` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `newsevents`
+--
+
+INSERT INTO `newsevents` (`ID`, `SUBJECT`, `NEWS`, `PATH_ATTACH`, `FONTJI`, `DATE_`, `TIME_`, `STATUS`, `USERNAME`) VALUES
+(2, 'School Holiday Notice', 'School will remain close from 21-Mar-2016 to 26-Mar-2016', 'x', 'Arial', '23/03/2016', '01:43:39am', 1, 'nitin'),
+(7, 'Cheeku happy Holi Khelegaa', 'Cheeku Happy Holi Khelegaa. Apni Pichkaari se papa ke sath holi khelegaa', 'x', 'Arial', '01/05/2016', '04:35:41pm', 0, 'nitin'),
+(9, 'ok', 'ok', 'x', 'Arial', '29/04/2016', '01:04:14pm', 1, 'nitin'),
+(10, 'ADS', 'asd', 'x', 'Arial', '29/04/2016', '01:05:30pm', 1, 'nitin'),
+(11, 'nitin', 'nitin', 'x', 'Arial', '29/04/2016', '03:32:41pm', 1, 'nitin'),
+(12, 'Szx', 'zxc', 'x', 'Arial', '29/04/2016', '03:47:33pm', 1, 'nitin'),
+(13, 'kjh', 'zxc', 'x', 'Arial', '29/04/2016', '03:48:53pm', 1, 'nitin'),
+(14, 'nb', 'zxc', 'x', 'Arial', '29/04/2016', '03:50:27pm', 1, 'nitin'),
+(15, 'nb', 'zxc', 'x', 'Arial', '29/04/2016', '03:51:21pm', 1, 'nitin'),
+(16, 'hg', 'b', 'x', 'Arial', '29/04/2016', '03:51:27pm', 1, 'nitin'),
+(17, 'ZXx', 'ZxZx', 'x', 'Arial', '29/04/2016', '03:55:37pm', 1, 'nitin'),
+(18, ' sfvSD', ' dfcsd', 'x', 'Arial', '29/04/2016', '04:06:34pm', 0, 'nitin'),
+(19, 'zxcvzxc', 'zxcvzxcvzxcv', 'x', 'Arial', '29/04/2016', '03:56:26pm', 1, 'nitin'),
+(20, 'as', 'asd', 'x', 'Arial', '29/04/2016', '03:57:06pm', 1, 'nitin'),
+(21, 'sdfsdf', 'sdfSDF', 'x', 'Arial', '29/04/2016', '03:57:26pm', 1, 'nitin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newsletter`
+--
+
+CREATE TABLE `newsletter` (
+  `NID` int(11) NOT NULL,
+  `TITLE_` varchar(250) NOT NULL,
+  `VOLUME_` int(11) NOT NULL COMMENT 'Means edition (i.e 1,2,3,4...n) of newsletter',
+  `COVER_` varchar(250) NOT NULL,
+  `PATH_` varchar(250) NOT NULL,
+  `DATE_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `YEAR_` varchar(5) NOT NULL,
+  `USERNAME_` varchar(150) NOT NULL,
+  `STATUS_` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `newsletter`
+--
+
+INSERT INTO `newsletter` (`NID`, `TITLE_`, `VOLUME_`, `COVER_`, `PATH_`, `DATE_`, `YEAR_`, `USERNAME_`, `STATUS_`) VALUES
+(30, 'Newsletter', 1, 'front_30.jpg', '30.doc', '2016-05-01 14:20:45', '2016', 'nitin', 0),
+(31, 'Newsletter', 2, 'x', '31.pdf', '2016-05-01 14:21:02', '2016', 'nitin', 1);
 
 -- --------------------------------------------------------
 
@@ -676,6 +758,19 @@ ALTER TABLE `fee`
   ADD KEY `feetype` (`feetype`);
 
 --
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`GL_ID`),
+  ADD KEY `CATEG_ID` (`CATEG_ID`);
+
+--
+-- Indexes for table `gallery_category`
+--
+ALTER TABLE `gallery_category`
+  ADD PRIMARY KEY (`CATEG_ID`);
+
+--
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -694,6 +789,13 @@ ALTER TABLE `menu`
 ALTER TABLE `newsevents`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `STATUS` (`STATUS`);
+
+--
+-- Indexes for table `newsletter`
+--
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`NID`),
+  ADD KEY `USERNAME_` (`USERNAME_`);
 
 --
 -- Indexes for table `news_id_`
@@ -752,12 +854,22 @@ ALTER TABLE `_id_`
 -- AUTO_INCREMENT for table `bday_data`
 --
 ALTER TABLE `bday_data`
-  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `fee`
 --
 ALTER TABLE `fee`
   MODIFY `feeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `GL_ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `gallery_category`
+--
+ALTER TABLE `gallery_category`
+  MODIFY `CATEG_ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `menu`
 --
@@ -767,7 +879,12 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `newsevents`
 --
 ALTER TABLE `newsevents`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `newsletter`
+--
+ALTER TABLE `newsletter`
+  MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `online_enquiry`
 --

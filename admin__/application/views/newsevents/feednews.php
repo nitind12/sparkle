@@ -53,8 +53,8 @@
                         echo form_input($data);
                         ?>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit Button</button>
-                    <button type="reset" class="btn btn-flickr">Reset Button</button>
+                    <button type="submit" class="btn btn-primary"> Submit </button>
+                    <button type="reset" class="btn btn-flickr"> Reset </button>
                     <?php echo form_close(); ?>
                     <div style="color: #ff0000; font-weight: bold; font-style: italic; padding: 5px"><?php echo $this->session->flashdata('feed_msg_'); ?></div>
                 </div>

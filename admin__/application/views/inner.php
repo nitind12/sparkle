@@ -10,22 +10,24 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <?php $data['style_'] = ' style="height: 400px; overflow: auto"'; ?>
-            <?php $this->load->view($folder_.'/feedbday',$data); ?>
-            </div>
-            <div class="row">
-                <div class="col-lg-12" style="color: #ff0000; padding: 3px; text-align: center">
-                    <?php echo $this->session->flashdata('feed_bday_msg_'); ?>
+                <div class="col-lg-12" style="color: #ff0000; padding: 0px; text-align: center; border: #ff0000 solid 0px">
+                    <?php echo $this->session->flashdata('_msg_'); ?>
                 </div>
                 <div style="clear: both; padding: 10px"></div>
+            </div>
+            <div class="row">
+                <?php $data['style_'] = ' style="height: 400px; overflow: auto"'; ?>
+            <?php $this->load->view($folder_.'/'.$page__,$data); ?>
             </div>
             
             <div class="row">
                 <?php $this->load->view($folder_.'/'.$view1,$data); ?>
                 <?php $this->load->view($folder_.'/'.$view2,$data); ?>
             </div>
+            <?php if(isset($view3)){ ?>
             <div class="row">
                 <?php $this->load->view($folder_.'/'.$view3,$data); ?>
             </div>
+            <?php } ?>
         </div>
 </div>
