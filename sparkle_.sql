@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2016 at 07:56 PM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 7.0.1
+-- Generation Time: May 08, 2016 at 12:30 PM
+-- Server version: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `sparkle_`
@@ -26,22 +26,21 @@ SET time_zone = "+00:00";
 -- Table structure for table `bday_data`
 --
 
-CREATE TABLE `bday_data` (
-  `BID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `bday_data` (
+`BID` int(11) NOT NULL,
   `NAME_` varchar(100) NOT NULL,
   `DOB` varchar(25) NOT NULL,
   `PHOTO_` varchar(100) NOT NULL,
   `DOA` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `STATUS` int(11) NOT NULL,
   `USERNAME_` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `bday_data`
 --
 
 INSERT INTO `bday_data` (`BID`, `NAME_`, `DOB`, `PHOTO_`, `DOA`, `STATUS`, `USERNAME_`) VALUES
-(1, 'Nitin Deepak', '2016-03-25', '1.png', '2016-03-25 12:14:06', 1, 'nitin'),
 (3, 'Mukesh Joshi', '1981-11-28', 'x', '2016-04-29 07:32:21', 1, 'nitin'),
 (4, 'cscvad', '2015-11-30', 'x', '2016-05-01 02:13:22', 1, 'nitin');
 
@@ -51,7 +50,7 @@ INSERT INTO `bday_data` (`BID`, `NAME_`, `DOB`, `PHOTO_`, `DOA`, `STATUS`, `USER
 -- Table structure for table `city_`
 --
 
-CREATE TABLE `city_` (
+CREATE TABLE IF NOT EXISTS `city_` (
   `NAME_` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -69,7 +68,7 @@ INSERT INTO `city_` (`NAME_`) VALUES
 -- Table structure for table `country_`
 --
 
-CREATE TABLE `country_` (
+CREATE TABLE IF NOT EXISTS `country_` (
   `ABREV_` varchar(5) NOT NULL,
   `NAME_` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -350,8 +349,8 @@ INSERT INTO `country_` (`ABREV_`, `NAME_`) VALUES
 -- Table structure for table `fee`
 --
 
-CREATE TABLE `fee` (
-  `feeID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `fee` (
+`feeID` int(11) NOT NULL,
   `regID` varchar(25) NOT NULL,
   `date` varchar(20) NOT NULL,
   `Amount` int(11) NOT NULL,
@@ -362,7 +361,7 @@ CREATE TABLE `fee` (
   `dd_ch_no` varchar(20) NOT NULL,
   `dd_ch_date` varchar(20) NOT NULL,
   `DOE_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `fee`
@@ -385,14 +384,15 @@ INSERT INTO `fee` (`feeID`, `regID`, `date`, `Amount`, `username`, `feetype`, `f
 -- Table structure for table `gallery`
 --
 
-CREATE TABLE `gallery` (
-  `GL_ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `gallery` (
+`GL_ID` int(11) NOT NULL,
   `PHOTO_` varchar(250) NOT NULL,
   `TITLE_` varchar(250) NOT NULL,
   `WIDTH_` int(11) NOT NULL,
   `HEIGHT_` int(11) NOT NULL,
-  `CATEG_ID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `CATEG_ID` int(11) NOT NULL,
+  `USERNAME_` varchar(40) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 -- --------------------------------------------------------
 
@@ -400,10 +400,30 @@ CREATE TABLE `gallery` (
 -- Table structure for table `gallery_category`
 --
 
-CREATE TABLE `gallery_category` (
-  `CATEG_ID` int(11) NOT NULL,
-  `CATEGORY` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `gallery_category` (
+`CATEG_ID` int(11) NOT NULL,
+  `CATEGORY` varchar(25) NOT NULL,
+  `DESC` varchar(500) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `gallery_category`
+--
+
+INSERT INTO `gallery_category` (`CATEG_ID`, `CATEGORY`, `DESC`) VALUES
+(1, 'INFRASTRUCTURE', 'Infrastructure Of the Sparkle'),
+(2, 'CLASSES', 'Classes Of the Sparkle'),
+(3, 'Naveen', 'Hi there'),
+(4, 'Hello ', 'New to Me'),
+(5, 'New', 'zdvavqqqq qqqq NEW'),
+(6, 'zsdgD', 'BSSB bsbsb '),
+(7, 'ascasc', 'ascascasca'),
+(8, 'sss', 'sss'),
+(9, 'as', 'asfasfasf'),
+(10, 'asc', 'scasc'),
+(11, 'asc123', 'asc'),
+(12, 'ada1', 'sfas'),
+(13, 'asc', 'ascasc');
 
 -- --------------------------------------------------------
 
@@ -411,7 +431,7 @@ CREATE TABLE `gallery_category` (
 -- Table structure for table `login`
 --
 
-CREATE TABLE `login` (
+CREATE TABLE IF NOT EXISTS `login` (
   `USERNAME_` varchar(40) NOT NULL,
   `PASSWORD_` varchar(25) NOT NULL,
   `USER_STATUS` varchar(5) NOT NULL
@@ -434,12 +454,12 @@ INSERT INTO `login` (`USERNAME_`, `PASSWORD_`, `USER_STATUS`) VALUES
 -- Table structure for table `menu`
 --
 
-CREATE TABLE `menu` (
-  `ID_` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `menu` (
+`ID_` int(11) NOT NULL,
   `MENU` varchar(30) NOT NULL,
   `USER_STATUS` varchar(5) NOT NULL,
   `PRIORITY_` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -447,8 +467,8 @@ CREATE TABLE `menu` (
 -- Table structure for table `newsevents`
 --
 
-CREATE TABLE `newsevents` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `newsevents` (
+`ID` int(11) NOT NULL,
   `SUBJECT` varchar(200) NOT NULL,
   `NEWS` text NOT NULL,
   `PATH_ATTACH` varchar(150) NOT NULL,
@@ -457,7 +477,7 @@ CREATE TABLE `newsevents` (
   `TIME_` varchar(25) NOT NULL,
   `STATUS` int(11) NOT NULL DEFAULT '1',
   `USERNAME` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `newsevents`
@@ -478,7 +498,8 @@ INSERT INTO `newsevents` (`ID`, `SUBJECT`, `NEWS`, `PATH_ATTACH`, `FONTJI`, `DAT
 (18, ' sfvSD', ' dfcsd', 'x', 'Arial', '29/04/2016', '04:06:34pm', 0, 'nitin'),
 (19, 'zxcvzxc', 'zxcvzxcvzxcv', 'x', 'Arial', '29/04/2016', '03:56:26pm', 1, 'nitin'),
 (20, 'as', 'asd', 'x', 'Arial', '29/04/2016', '03:57:06pm', 1, 'nitin'),
-(21, 'sdfsdf', 'sdfSDF', 'x', 'Arial', '29/04/2016', '03:57:26pm', 1, 'nitin');
+(21, 'sdfsdf', 'sdfSDF', 'x', 'Arial', '29/04/2016', '03:57:26pm', 1, 'nitin'),
+(22, 'asc', 'asca', 'x', 'Arial', '03/05/2016', '09:22:22am', 1, 'naveen');
 
 -- --------------------------------------------------------
 
@@ -486,8 +507,8 @@ INSERT INTO `newsevents` (`ID`, `SUBJECT`, `NEWS`, `PATH_ATTACH`, `FONTJI`, `DAT
 -- Table structure for table `newsletter`
 --
 
-CREATE TABLE `newsletter` (
-  `NID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `newsletter` (
+`NID` int(11) NOT NULL,
   `TITLE_` varchar(250) NOT NULL,
   `VOLUME_` int(11) NOT NULL COMMENT 'Means edition (i.e 1,2,3,4...n) of newsletter',
   `COVER_` varchar(250) NOT NULL,
@@ -496,7 +517,7 @@ CREATE TABLE `newsletter` (
   `YEAR_` varchar(5) NOT NULL,
   `USERNAME_` varchar(150) NOT NULL,
   `STATUS_` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `newsletter`
@@ -512,7 +533,7 @@ INSERT INTO `newsletter` (`NID`, `TITLE_`, `VOLUME_`, `COVER_`, `PATH_`, `DATE_`
 -- Table structure for table `news_id_`
 --
 
-CREATE TABLE `news_id_` (
+CREATE TABLE IF NOT EXISTS `news_id_` (
   `ID_` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -522,15 +543,15 @@ CREATE TABLE `news_id_` (
 -- Table structure for table `online_enquiry`
 --
 
-CREATE TABLE `online_enquiry` (
-  `ENQ_ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `online_enquiry` (
+`ENQ_ID` int(11) NOT NULL,
   `NAME_` varchar(150) NOT NULL,
   `GENDER_` varchar(10) NOT NULL,
   `EMAIL_` varchar(150) NOT NULL,
   `MOBILE_PH` varchar(30) NOT NULL,
   `ENQ_IN_DETAIL` text NOT NULL,
   `DOR_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -538,8 +559,8 @@ CREATE TABLE `online_enquiry` (
 -- Table structure for table `online_registration`
 --
 
-CREATE TABLE `online_registration` (
-  `regid` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `online_registration` (
+`regid` int(11) NOT NULL,
   `FULLNAME` varchar(150) NOT NULL,
   `GENDER` varchar(10) NOT NULL,
   `FATHER` varchar(150) NOT NULL,
@@ -559,7 +580,7 @@ CREATE TABLE `online_registration` (
   `MOBILE_` varchar(15) NOT NULL,
   `EMAIL_` varchar(100) NOT NULL,
   `DOR_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -567,7 +588,7 @@ CREATE TABLE `online_registration` (
 -- Table structure for table `register_with_us`
 --
 
-CREATE TABLE `register_with_us` (
+CREATE TABLE IF NOT EXISTS `register_with_us` (
   `regid` varchar(25) NOT NULL,
   `FULLNAME` varchar(150) NOT NULL,
   `FATHER` varchar(150) NOT NULL,
@@ -602,7 +623,7 @@ CREATE TABLE `register_with_us` (
 -- Table structure for table `state_`
 --
 
-CREATE TABLE `state_` (
+CREATE TABLE IF NOT EXISTS `state_` (
   `NAME_` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -624,7 +645,7 @@ INSERT INTO `state_` (`NAME_`) VALUES
 -- Table structure for table `user_status`
 --
 
-CREATE TABLE `user_status` (
+CREATE TABLE IF NOT EXISTS `user_status` (
   `ST_ID` varchar(5) NOT NULL,
   `STATUS` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -646,7 +667,7 @@ INSERT INTO `user_status` (`ST_ID`, `STATUS`) VALUES
 -- Table structure for table `zone_`
 --
 
-CREATE TABLE `zone_` (
+CREATE TABLE IF NOT EXISTS `zone_` (
   `ID` int(11) NOT NULL,
   `ZONE` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -669,12 +690,12 @@ INSERT INTO `zone_` (`ID`, `ZONE`) VALUES
 -- Table structure for table `zone_region`
 --
 
-CREATE TABLE `zone_region` (
-  `ID_` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `zone_region` (
+`ID_` int(11) NOT NULL,
   `ZONE_` int(11) NOT NULL,
   `REGION` varchar(10) NOT NULL,
   `REG_NAME` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `zone_region`
@@ -722,7 +743,7 @@ INSERT INTO `zone_region` (`ID_`, `ZONE_`, `REGION`, `REG_NAME`) VALUES
 -- Table structure for table `_id_`
 --
 
-CREATE TABLE `_id_` (
+CREATE TABLE IF NOT EXISTS `_id_` (
   `ID_` int(11) NOT NULL,
   `regid_` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -742,109 +763,97 @@ INSERT INTO `_id_` (`ID_`, `regid_`) VALUES
 -- Indexes for table `bday_data`
 --
 ALTER TABLE `bday_data`
-  ADD PRIMARY KEY (`BID`),
-  ADD KEY `USERNAME_` (`USERNAME_`);
+ ADD PRIMARY KEY (`BID`), ADD KEY `USERNAME_` (`USERNAME_`);
 
 --
 -- Indexes for table `fee`
 --
 ALTER TABLE `fee`
-  ADD PRIMARY KEY (`feeID`),
-  ADD KEY `regID` (`regID`,`date`),
-  ADD KEY `userID` (`username`),
-  ADD KEY `username` (`username`),
-  ADD KEY `username_2` (`username`),
-  ADD KEY `regID_2` (`regID`),
-  ADD KEY `feetype` (`feetype`);
+ ADD PRIMARY KEY (`feeID`), ADD KEY `regID` (`regID`,`date`), ADD KEY `userID` (`username`), ADD KEY `username` (`username`), ADD KEY `username_2` (`username`), ADD KEY `regID_2` (`regID`), ADD KEY `feetype` (`feetype`);
 
 --
 -- Indexes for table `gallery`
 --
 ALTER TABLE `gallery`
-  ADD PRIMARY KEY (`GL_ID`),
-  ADD KEY `CATEG_ID` (`CATEG_ID`);
+ ADD PRIMARY KEY (`GL_ID`), ADD KEY `CATEG_ID` (`CATEG_ID`);
 
 --
 -- Indexes for table `gallery_category`
 --
 ALTER TABLE `gallery_category`
-  ADD PRIMARY KEY (`CATEG_ID`);
+ ADD PRIMARY KEY (`CATEG_ID`);
 
 --
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`USERNAME_`),
-  ADD KEY `USER_STATUS` (`USER_STATUS`);
+ ADD PRIMARY KEY (`USERNAME_`), ADD KEY `USER_STATUS` (`USER_STATUS`);
 
 --
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
-  ADD PRIMARY KEY (`ID_`);
+ ADD PRIMARY KEY (`ID_`);
 
 --
 -- Indexes for table `newsevents`
 --
 ALTER TABLE `newsevents`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `STATUS` (`STATUS`);
+ ADD PRIMARY KEY (`ID`), ADD KEY `STATUS` (`STATUS`);
 
 --
 -- Indexes for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  ADD PRIMARY KEY (`NID`),
-  ADD KEY `USERNAME_` (`USERNAME_`);
+ ADD PRIMARY KEY (`NID`), ADD KEY `USERNAME_` (`USERNAME_`);
 
 --
 -- Indexes for table `news_id_`
 --
 ALTER TABLE `news_id_`
-  ADD PRIMARY KEY (`ID_`);
+ ADD PRIMARY KEY (`ID_`);
 
 --
 -- Indexes for table `online_enquiry`
 --
 ALTER TABLE `online_enquiry`
-  ADD PRIMARY KEY (`ENQ_ID`);
+ ADD PRIMARY KEY (`ENQ_ID`);
 
 --
 -- Indexes for table `online_registration`
 --
 ALTER TABLE `online_registration`
-  ADD PRIMARY KEY (`regid`);
+ ADD PRIMARY KEY (`regid`);
 
 --
 -- Indexes for table `register_with_us`
 --
 ALTER TABLE `register_with_us`
-  ADD PRIMARY KEY (`regid`),
-  ADD KEY `USERNAME_` (`USERNAME_`);
+ ADD PRIMARY KEY (`regid`), ADD KEY `USERNAME_` (`USERNAME_`);
 
 --
 -- Indexes for table `user_status`
 --
 ALTER TABLE `user_status`
-  ADD PRIMARY KEY (`ST_ID`);
+ ADD PRIMARY KEY (`ST_ID`);
 
 --
 -- Indexes for table `zone_`
 --
 ALTER TABLE `zone_`
-  ADD PRIMARY KEY (`ID`);
+ ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `zone_region`
 --
 ALTER TABLE `zone_region`
-  ADD PRIMARY KEY (`ID_`);
+ ADD PRIMARY KEY (`ID_`);
 
 --
 -- Indexes for table `_id_`
 --
 ALTER TABLE `_id_`
-  ADD PRIMARY KEY (`ID_`);
+ ADD PRIMARY KEY (`ID_`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -854,52 +863,52 @@ ALTER TABLE `_id_`
 -- AUTO_INCREMENT for table `bday_data`
 --
 ALTER TABLE `bday_data`
-  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `fee`
 --
 ALTER TABLE `fee`
-  MODIFY `feeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+MODIFY `feeID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `GL_ID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `GL_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `gallery_category`
 --
 ALTER TABLE `gallery_category`
-  MODIFY `CATEG_ID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `CATEG_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `newsevents`
 --
 ALTER TABLE `newsevents`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `online_enquiry`
 --
 ALTER TABLE `online_enquiry`
-  MODIFY `ENQ_ID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ENQ_ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `online_registration`
 --
 ALTER TABLE `online_registration`
-  MODIFY `regid` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `regid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `zone_region`
 --
 ALTER TABLE `zone_region`
-  MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
 -- Constraints for dumped tables
 --
@@ -908,7 +917,7 @@ ALTER TABLE `zone_region`
 -- Constraints for table `login`
 --
 ALTER TABLE `login`
-  ADD CONSTRAINT `usrstatus_for_login` FOREIGN KEY (`USER_STATUS`) REFERENCES `user_status` (`ST_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `usrstatus_for_login` FOREIGN KEY (`USER_STATUS`) REFERENCES `user_status` (`ST_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
