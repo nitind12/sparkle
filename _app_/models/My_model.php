@@ -374,4 +374,18 @@ class My_model extends CI_Model {
         }
         return $bool_;
     }
+
+    function get_gallery_category(){
+        $this->db->where('STATUS', 1);
+        $query = $this->db->get('gallery_category');
+
+        return $query->result();
+    }
+
+    function get_gallery(){
+        $this->db->where('STATUS', 1);
+        $query = $this->db->get('gallery');
+
+        return $query->result();
+    }
 }

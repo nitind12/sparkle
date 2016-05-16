@@ -1,6 +1,6 @@
 <div class="col-lg-6">
     <div class="panel panel-default"<?php echo $style_; ?>>
-        <div class="panel-heading">
+        <div class="panel-heading" style="background: #fdc9d6">
             All De-Activated Birthdays
         </div>
         <!-- .panel-heading -->
@@ -15,13 +15,13 @@
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion1" href="#collapse_all_<?php echo $item->BID; ?>"><?php echo $item->NAME_; ?></a>
                                 <div style="float: right">
-                                    <?php echo anchor('admin_/delete_bday/' . $item->BID, '<span style="font-size: 11px; color: #ff0000; font-weight: bold; background: #ffff00; padding: 2px">Delete</span>', array('style' => 'float: right')); ?>
+                                    <?php echo anchor('bday/delete_bday/' . $item->BID, '<span style="font-size: 11px; color: #ff0000; font-weight: bold; background: #ffff00; padding: 2px">Delete</span>', array('style' => 'float: right')); ?>
                                 </div>
                                 <div style="float: right">
-                                    <?php echo anchor('admin_/edit_bday/' . $item->BID, '<span style="font-size: 11px; color: #009000; background: #ffff00; padding: 2px">Edit</span>', array('style' => 'float: right')); ?>
+                                    <?php echo anchor('bday/edit_bday/' . $item->BID, '<span style="font-size: 11px; color: #009000; background: #ffff00; padding: 2px">Edit</span>', array('style' => 'float: right')); ?>
                                 </div>
                                 <div style="float: right">
-                                    <?php echo anchor('admin_/active_deactive_bday/' . $item->BID. '/1', '<span style="font-size: 11px; color: #ffffff; background: #808080; padding: 2px">Active</span>', array('style' => 'float: right')); ?>
+                                    <?php echo anchor('bday/active_deactive_bday/' . $item->BID. '/1', '<span style="font-size: 11px; color: #ffffff; background: #808080; padding: 2px">Active</span>', array('style' => 'float: right')); ?>
                                 </div>
                             </h4>
                             

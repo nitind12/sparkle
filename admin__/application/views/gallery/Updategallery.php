@@ -11,7 +11,7 @@
         <div class="panel-body">
             <div class="row"> 
                 <div class="col-sm-4">
-                    <?php echo form_open_multipart('admin_/do_upload', array('name' => 'frmupload', 'id' => 'frmupload', 'role' => 'form', 'enctype' => 'multipart/form-data', 'method' => 'POST')); ?>
+                    <?php echo form_open_multipart('gallery/do_upload', array('name' => 'frmupload', 'id' => 'frmupload', 'role' => 'form', 'enctype' => 'multipart/form-data', 'method' => 'POST')); ?>
                     <div class="col-sm-4"><label style="color:#0066cc; font-weight: bold; font-size:14px;">Choose Category</label></div>
                     <div class="col-sm-8">
                         <?php
@@ -69,7 +69,7 @@
                         <div class="col-md-12">
                             <div style="margin-top: 1%;">
                                 <blockquote>
-                                    <ul class="list-inline"  id="gallery">
+                                    <ul class="list-inline" id="gallery">
 
                                     </ul>
                                 </blockquote>

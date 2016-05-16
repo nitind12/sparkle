@@ -6,7 +6,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-sm-12">
-                    <?php echo form_open_multipart('admin_/feedBday', array('name' => 'frmNewsEvents', 'id' => 'frmNewsEvents', 'role' => 'form')); ?>
+                    <?php echo form_open_multipart('bday/feedBday', array('name' => 'frmNewsEvents', 'id' => 'frmNewsEvents', 'role' => 'form')); ?>
                     <div class="form-group">
                         <label>Full Name</label>
                         <?php

@@ -1,12 +1,12 @@
 <div class="col-lg-12">
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="panel panel-default"<?php echo $style_; ?>>
+        <div class="panel-heading" style="background: #ff9000; color: #ffffff">
             Update Newsletters here...
         </div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-sm-12">
-                    <?php echo form_open_multipart('admin_/update_newsletter/'.$newsletter_edit->NID, array('name' => 'frmNewsEvents', 'id' => 'frmNewsEvents', 'role' => 'form')); ?>
+                    <?php echo form_open_multipart('newsletter/update_newsletter/'.$newsletter_edit->NID, array('name' => 'frmNewsEvents', 'id' => 'frmNewsEvents', 'role' => 'form')); ?>
                     <div class="form-group">
                         <label>Title</label>
                         <?php

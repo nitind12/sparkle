@@ -15,13 +15,13 @@
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion1" href="#collapse<?php echo $item->ID; ?>_"><?php echo $loop1; ?>. <?php echo $item->SUBJECT; ?></a>
                                     <div style="float: right">
-                                        <?php echo anchor('admin_/delete_news_events/' . $item->ID, '<span style="font-size: 11px; color: #ff0000; font-weight: bold; background: #ffff00; padding: 2px">Delete</span>', array('style' => 'float: right')); ?>
+                                        <?php echo anchor('gallery/delete_news_events/' . $item->ID, '<span style="font-size: 11px; color: #ff0000; font-weight: bold; background: #ffff00; padding: 2px">Delete</span>', array('style' => 'float: right')); ?>
                                     </div>
                                     <div style="float: right;">
-                                        <?php echo anchor('admin_/active_deactive_news/' . $item->ID . '/1', '<span style="font-size: 11px; color: #ffffff; background: #909090; padding: 2px">Activate</span>', array('style' => 'float: right')); ?>
+                                        <?php echo anchor('gallery/active_deactive_news/' . $item->ID . '/1', '<span style="font-size: 11px; color: #ffffff; background: #909090; padding: 2px">Activate</span>', array('style' => 'float: right')); ?>
                                     </div>
                                     <div style="float: right">
-                                        <?php echo anchor('admin_/edit_news_events/' . $item->ID, '<span style="font-size: 11px; color: #009000; background: #ffff00; padding: 2px">Edit</span>', array('style' => 'float: right')); ?>
+                                        <?php echo anchor('gallery/edit_news_events/' . $item->ID, '<span style="font-size: 11px; color: #009000; background: #ffff00; padding: 2px">Edit</span>', array('style' => 'float: right')); ?>
                                     </div>
                                 </h4>
 
@@ -36,7 +36,7 @@
                                     <br />
                                     <?php if($item->PATH_ATTACH != 'x'){ ?>
                                     <a style="font-size: 10px; color: #0000ff" href="<?php echo base_url('_assets_/newsdetail/'.$item->PATH_ATTACH);?>" target="_blank">[ Attachment ]</a>
-                                    <a style="float:right; font-size: 10px; color: #ff0000" href="<?php echo site_url('admin_/delete_attachment/'.$item->ID);?>">Delete Attachment?</a>
+                                    <a style="float:right; font-size: 10px; color: #ff0000" href="<?php echo site_url('gallery/delete_attachment/'.$item->ID);?>">Delete Attachment?</a>
                                     <?php } ?>
                                 </div>
                             </div>

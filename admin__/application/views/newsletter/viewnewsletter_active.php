@@ -1,6 +1,6 @@
 <div class="col-lg-6">
     <div class="panel panel-default"<?php echo $style_; ?>>
-        <div class="panel-heading">
+        <div class="panel-heading" style="background: #c3f9cb">
             Active Newsletters
         </div>
         <!-- .panel-heading -->
@@ -14,7 +14,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $item->NID; ?>"><?php echo $loop1; ?>. <?php echo $item->TITLE_; ?></a>
-                                <?php echo anchor('admin_/active_deactive_newsletter/'.$item->NID.'/0', '<span style="font-size: 11px; color: #ff0000; background: #ffff00; padding: 2px">Deactivate</span>', array('style'=>'float: right')); ?>
+                                <?php echo anchor('newsletter/active_deactive_newsletter/'.$item->NID.'/0', '<span style="font-size: 11px; color: #ff0000; background: #ffff00; padding: 2px">Deactivate</span>', array('style'=>'float: right')); ?>
                                 <span style="float: right; font-size: 11px; color: #0000ff; padding: 4px 10px 4px 4px">Year: <?php echo $item->YEAR_; ?>, Vol.: <?php echo $item->VOLUME_; ?></span>
                             </h4>
                             

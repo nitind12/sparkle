@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+date_default_timezone_set("Asia/Kolkata");
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -29,8 +29,8 @@ $config['mailpath'] 	= '/usr/sbin/sendmail';
 $config['charset'] 		= 'iso-8859-1';
 $config['wordwrap'] 	= TRUE;
 
-//$config['base_url'] = 'http://www.littlesparkleacademy.com/admin__';
 $config['base_url'] = 'http://localhost/sparkle/admin__';
+//$config['base_url'] = 'http://www.littlesparkleacademy.com/admin__';
 
 /*
 |--------------------------------------------------------------------------
@@ -522,7 +522,7 @@ $config['proxy_ips'] = '';
 /*
 Customized Definitions --------------------->>>>>
 */
-define('_SCHOOL_', "Little Sparke Academy, Motahaldu");
+define('_SCHOOL_', "Little Sparke Academy, Haldwani");
 define('_SCHOOL_ABREV_', "LSA");
 define('__BACKTOSITE__', 'http://localhost/sparkle');
 //define('__BACKTOSITE__', 'http://www.littlesparkleacademy.com');
@@ -538,4 +538,16 @@ define('__BACKTOSITE__', 'http://localhost/sparkle');
 | Nothing to do with cnfig/autoload.php, this allows PHP autoload to work
 | for base controllers and some third-party libraries.
 |
+*/
+/*
+
+define('EXT', '.php');
+function __autoload($class) {
+    if (substr($class,0,3) !== 'CI_') {
+        if (file_exists($file = APPPATH . 'core/' . $class . EXT)) {
+            include $file;
+        }
+    }
+}
+
 */

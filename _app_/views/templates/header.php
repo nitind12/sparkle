@@ -73,7 +73,7 @@
                         <li><a href="<?php echo site_url('web/call_page/features/features/3'); ?>">Features</a></li>
                         <li><a href="<?php echo site_url('web/call_page/gallery/index/6'); ?>">Gallery</a></li>
                         <li><a href="<?php echo site_url('web/call_page/contact/contact/5'); ?>">Contact</a></li>
-                        <li><a href="<?php echo site_url('web/call_page/login/lgn/4'); ?>">Login</a></li>
+                        <li><a href="<?php echo site_url('web/login'); ?>">Login</a></li>
                     </ul>
                     <a href="#" id="pull"><img src="<?php echo base_url('_assets_/images/menu-icon.png'); ?>" title="menu" /></a>
                 </nav>

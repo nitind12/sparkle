@@ -1,12 +1,12 @@
 <div class="col-lg-12">
     <div class="panel panel-default"<?php //echo $style_; ?>>
         <div class="panel-heading">
-            Upload &amp; Manage Newsletters here...
+            Feed Newsletter here...
         </div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-sm-12">
-                    <?php echo form_open_multipart('admin_/upload_newsletter', array('name' => 'frmNewsEvents', 'id' => 'frmNewsEvents', 'role' => 'form')); ?>
+                    <?php echo form_open_multipart('newsletter/upload_newsletter', array('name' => 'frmNewsEvents', 'id' => 'frmNewsEvents', 'role' => 'form')); ?>
                     <div class="form-group">
                         <label>Title</label>
                         <?php
