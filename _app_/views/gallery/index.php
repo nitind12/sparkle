@@ -19,7 +19,7 @@
                               <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $loop1;?>"><?php echo $grp_item->CATEGORY; ?></a>
                             </h4>
                           </div>
-                          <div id="collapse<?php echo $loop1;?>" class="panel-collapse collapse<?php if($loop1==1){ echo " in";} ?>">
+                          <div id="collapse<?php echo $loop1;?>" class="panel-collapse collapse<?php if($loop1==1){ echo " in";} ?>" style="padding: 10px 0px;">
                                 <?php foreach($gallery_ as $item){ ?>
                                     <?php if($grp_item->CATEG_ID == $item->CATEG_ID){ ?>
                                     <div class="col-md-4 gallery-grid">

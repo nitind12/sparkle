@@ -388,4 +388,11 @@ class My_model extends CI_Model {
 
         return $query->result();
     }
+
+    function get_activities(){
+        $this->db->where('STATUS_', 1);
+        $query = $this->db->get('activities');
+
+        return $query->result();
+    }
 }

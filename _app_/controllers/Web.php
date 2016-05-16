@@ -28,6 +28,11 @@ class Web extends CI_Controller {
             if($i == 6){
                 $data['gallery_category'] = $this->mm->get_gallery_category();
                 $data['gallery_'] = $this->mm->get_gallery();
+                if(count($data['gallery_']) == 0) redirect('web');
+            }
+            if($i == 7){   
+                $data['activity_'] = $this->mm->get_activities();
+                if(count($data['activity_']) == 0) redirect('web');
             }
             $data['keys_'] = $data_['keys_'];
             $data['desc_'] = $data_['desc_'];

@@ -72,6 +72,7 @@
                         <li><a href="<?php echo site_url('web/call_page/admission/admission/2'); ?>">Admissions</a></li>
                         <li><a href="<?php echo site_url('web/call_page/features/features/3'); ?>">Features</a></li>
                         <li><a href="<?php echo site_url('web/call_page/gallery/index/6'); ?>">Gallery</a></li>
+                        <li><a href="<?php echo site_url('web/call_page/activities/index/7'); ?>">Activities</a></li>
                         <li><a href="<?php echo site_url('web/call_page/contact/contact/5'); ?>">Contact</a></li>
                         <li><a href="<?php echo site_url('web/login'); ?>">Login</a></li>
                     </ul>
