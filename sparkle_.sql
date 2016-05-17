@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2016 at 12:30 PM
--- Server version: 5.6.20
--- PHP Version: 5.5.15
+-- Generation Time: May 17, 2016 at 06:05 AM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 7.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `sparkle_`
@@ -23,18 +23,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `activities`
+--
+
+CREATE TABLE `activities` (
+  `ID` int(11) NOT NULL,
+  `TITLE_` varchar(200) NOT NULL,
+  `BRIEF_` text NOT NULL,
+  `DET_PATH` varchar(100) NOT NULL,
+  `PICTURE_PATH` varchar(100) NOT NULL,
+  `DATE_OF_ACTIVITY` varchar(15) NOT NULL,
+  `DATE_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `STATUS_` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `activities`
+--
+
+INSERT INTO `activities` (`ID`, `TITLE_`, `BRIEF_`, `DET_PATH`, `PICTURE_PATH`, `DATE_OF_ACTIVITY`, `DATE_`, `STATUS_`) VALUES
+(1, 'Final Exams 2016 are on the on the way', 'Amrapali Website is now re-engineered in a new architecture as per the modern trends and standards of the World Wide Web. Combination of MVC & Bootstrap technology endow with new heights to our website, which ensures secure, more reliable, strong development environment and embedded with smart devices compatibility', '1.docx', '1.jpg', '2016-05-16', '2016-05-16 04:45:31', 0),
+(2, 'Happy Holi', 'Amrapali Website is now re-engineered in a new architecture as per the modern trends and standards of the World Wide Web. Combination of MVC & Bootstrap technology endow with new heights to our website, which ensures secure, more reliable, strong development environment and embedded with smart devices compatibility.', '2.docx', '2.jpg', '2016-05-16', '2016-05-16 04:46:27', 0),
+(3, 'Summer Vacation from Mid of May 2016 starts', 'Have Presentable Information platform.\r\nResponsive Web Architecture which enables website and all panels to all the smart devices.\r\nSEO enabled Architecture.\r\nLight weight architecture.\r\nPlug n play preferences to new technologies.\r\nInteractive admin panel is embedded for easy and disciplined handling.\r\nDynamic Faculty Panel which provides easy addition & updating.\r\nDynamic News & Event Panel which provides easy handling of latest & archive news feeding and view.\r\nDynamic google Photo/ video panel which provides easy & secure uploading and easy navigation.\r\nDynamic navigational structure to present current and immediate events/ happenings.\r\nEasy and smooth navigation.\r\nStrict Disciplined standard is followed for enhanced Interaction and navigation.', '3.pdf', '3.jpg', '2016-05-16', '2016-05-16 05:04:45', 0),
+(4, 'Session 22016-17 starts from 1st-Aug-2016', 'Have Presentable Information platform.\r\nResponsive Web Architecture which enables website and all panels to all the smart devices.\r\nSEO enabled Architecture.\r\nLight weight architecture.\r\nPlug n play preferences to new technologies.\r\nInteractive admin panel is embedded for easy and disciplined handling.\r\nDynamic Faculty Panel which provides easy addition & updating.\r\nDynamic News & Event Panel which provides easy handling of latest & archive news feeding and view.\r\nDynamic google Photo/ video panel which provides easy & secure uploading and easy navigation.\r\nDynamic navigational structure to present current and immediate events/ happenings.\r\nEasy and smooth navigation.\r\nStrict Disciplined standard is followed for enhanced Interaction and navigation\r\n', '4.docx', '4.jpg', '2016-05-17', '2016-05-16 05:05:52', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `bday_data`
 --
 
-CREATE TABLE IF NOT EXISTS `bday_data` (
-`BID` int(11) NOT NULL,
+CREATE TABLE `bday_data` (
+  `BID` int(11) NOT NULL,
   `NAME_` varchar(100) NOT NULL,
   `DOB` varchar(25) NOT NULL,
   `PHOTO_` varchar(100) NOT NULL,
   `DOA` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `STATUS` int(11) NOT NULL,
   `USERNAME_` varchar(40) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `bday_data`
@@ -50,7 +77,7 @@ INSERT INTO `bday_data` (`BID`, `NAME_`, `DOB`, `PHOTO_`, `DOA`, `STATUS`, `USER
 -- Table structure for table `city_`
 --
 
-CREATE TABLE IF NOT EXISTS `city_` (
+CREATE TABLE `city_` (
   `NAME_` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -68,7 +95,7 @@ INSERT INTO `city_` (`NAME_`) VALUES
 -- Table structure for table `country_`
 --
 
-CREATE TABLE IF NOT EXISTS `country_` (
+CREATE TABLE `country_` (
   `ABREV_` varchar(5) NOT NULL,
   `NAME_` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -349,8 +376,8 @@ INSERT INTO `country_` (`ABREV_`, `NAME_`) VALUES
 -- Table structure for table `fee`
 --
 
-CREATE TABLE IF NOT EXISTS `fee` (
-`feeID` int(11) NOT NULL,
+CREATE TABLE `fee` (
+  `feeID` int(11) NOT NULL,
   `regID` varchar(25) NOT NULL,
   `date` varchar(20) NOT NULL,
   `Amount` int(11) NOT NULL,
@@ -361,7 +388,7 @@ CREATE TABLE IF NOT EXISTS `fee` (
   `dd_ch_no` varchar(20) NOT NULL,
   `dd_ch_date` varchar(20) NOT NULL,
   `DOE_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `fee`
@@ -384,15 +411,23 @@ INSERT INTO `fee` (`feeID`, `regID`, `date`, `Amount`, `username`, `feetype`, `f
 -- Table structure for table `gallery`
 --
 
-CREATE TABLE IF NOT EXISTS `gallery` (
-`GL_ID` int(11) NOT NULL,
+CREATE TABLE `gallery` (
+  `GL_ID` int(11) NOT NULL,
   `PHOTO_` varchar(250) NOT NULL,
   `TITLE_` varchar(250) NOT NULL,
   `WIDTH_` int(11) NOT NULL,
   `HEIGHT_` int(11) NOT NULL,
   `CATEG_ID` int(11) NOT NULL,
+  `STATUS` tinyint(1) NOT NULL DEFAULT '1',
   `USERNAME_` varchar(40) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`GL_ID`, `PHOTO_`, `TITLE_`, `WIDTH_`, `HEIGHT_`, `CATEG_ID`, `STATUS`, `USERNAME_`) VALUES
+(12, '1.jpg', 'x', 0, 0, 1, 1, 'nitin');
 
 -- --------------------------------------------------------
 
@@ -400,30 +435,19 @@ CREATE TABLE IF NOT EXISTS `gallery` (
 -- Table structure for table `gallery_category`
 --
 
-CREATE TABLE IF NOT EXISTS `gallery_category` (
-`CATEG_ID` int(11) NOT NULL,
+CREATE TABLE `gallery_category` (
+  `CATEG_ID` int(11) NOT NULL,
   `CATEGORY` varchar(25) NOT NULL,
-  `DESC` varchar(500) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+  `DESC` varchar(500) NOT NULL,
+  `STATUS` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gallery_category`
 --
 
-INSERT INTO `gallery_category` (`CATEG_ID`, `CATEGORY`, `DESC`) VALUES
-(1, 'INFRASTRUCTURE', 'Infrastructure Of the Sparkle'),
-(2, 'CLASSES', 'Classes Of the Sparkle'),
-(3, 'Naveen', 'Hi there'),
-(4, 'Hello ', 'New to Me'),
-(5, 'New', 'zdvavqqqq qqqq NEW'),
-(6, 'zsdgD', 'BSSB bsbsb '),
-(7, 'ascasc', 'ascascasca'),
-(8, 'sss', 'sss'),
-(9, 'as', 'asfasfasf'),
-(10, 'asc', 'scasc'),
-(11, 'asc123', 'asc'),
-(12, 'ada1', 'sfas'),
-(13, 'asc', 'ascasc');
+INSERT INTO `gallery_category` (`CATEG_ID`, `CATEGORY`, `DESC`, `STATUS`) VALUES
+(1, 'General', 'General', 1);
 
 -- --------------------------------------------------------
 
@@ -431,7 +455,7 @@ INSERT INTO `gallery_category` (`CATEG_ID`, `CATEGORY`, `DESC`) VALUES
 -- Table structure for table `login`
 --
 
-CREATE TABLE IF NOT EXISTS `login` (
+CREATE TABLE `login` (
   `USERNAME_` varchar(40) NOT NULL,
   `PASSWORD_` varchar(25) NOT NULL,
   `USER_STATUS` varchar(5) NOT NULL
@@ -454,12 +478,12 @@ INSERT INTO `login` (`USERNAME_`, `PASSWORD_`, `USER_STATUS`) VALUES
 -- Table structure for table `menu`
 --
 
-CREATE TABLE IF NOT EXISTS `menu` (
-`ID_` int(11) NOT NULL,
+CREATE TABLE `menu` (
+  `ID_` int(11) NOT NULL,
   `MENU` varchar(30) NOT NULL,
   `USER_STATUS` varchar(5) NOT NULL,
   `PRIORITY_` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -467,8 +491,8 @@ CREATE TABLE IF NOT EXISTS `menu` (
 -- Table structure for table `newsevents`
 --
 
-CREATE TABLE IF NOT EXISTS `newsevents` (
-`ID` int(11) NOT NULL,
+CREATE TABLE `newsevents` (
+  `ID` int(11) NOT NULL,
   `SUBJECT` varchar(200) NOT NULL,
   `NEWS` text NOT NULL,
   `PATH_ATTACH` varchar(150) NOT NULL,
@@ -477,7 +501,7 @@ CREATE TABLE IF NOT EXISTS `newsevents` (
   `TIME_` varchar(25) NOT NULL,
   `STATUS` int(11) NOT NULL DEFAULT '1',
   `USERNAME` varchar(150) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `newsevents`
@@ -507,8 +531,8 @@ INSERT INTO `newsevents` (`ID`, `SUBJECT`, `NEWS`, `PATH_ATTACH`, `FONTJI`, `DAT
 -- Table structure for table `newsletter`
 --
 
-CREATE TABLE IF NOT EXISTS `newsletter` (
-`NID` int(11) NOT NULL,
+CREATE TABLE `newsletter` (
+  `NID` int(11) NOT NULL,
   `TITLE_` varchar(250) NOT NULL,
   `VOLUME_` int(11) NOT NULL COMMENT 'Means edition (i.e 1,2,3,4...n) of newsletter',
   `COVER_` varchar(250) NOT NULL,
@@ -517,7 +541,7 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
   `YEAR_` varchar(5) NOT NULL,
   `USERNAME_` varchar(150) NOT NULL,
   `STATUS_` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `newsletter`
@@ -533,7 +557,7 @@ INSERT INTO `newsletter` (`NID`, `TITLE_`, `VOLUME_`, `COVER_`, `PATH_`, `DATE_`
 -- Table structure for table `news_id_`
 --
 
-CREATE TABLE IF NOT EXISTS `news_id_` (
+CREATE TABLE `news_id_` (
   `ID_` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -543,15 +567,15 @@ CREATE TABLE IF NOT EXISTS `news_id_` (
 -- Table structure for table `online_enquiry`
 --
 
-CREATE TABLE IF NOT EXISTS `online_enquiry` (
-`ENQ_ID` int(11) NOT NULL,
+CREATE TABLE `online_enquiry` (
+  `ENQ_ID` int(11) NOT NULL,
   `NAME_` varchar(150) NOT NULL,
   `GENDER_` varchar(10) NOT NULL,
   `EMAIL_` varchar(150) NOT NULL,
   `MOBILE_PH` varchar(30) NOT NULL,
   `ENQ_IN_DETAIL` text NOT NULL,
   `DOR_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -559,8 +583,8 @@ CREATE TABLE IF NOT EXISTS `online_enquiry` (
 -- Table structure for table `online_registration`
 --
 
-CREATE TABLE IF NOT EXISTS `online_registration` (
-`regid` int(11) NOT NULL,
+CREATE TABLE `online_registration` (
+  `regid` int(11) NOT NULL,
   `FULLNAME` varchar(150) NOT NULL,
   `GENDER` varchar(10) NOT NULL,
   `FATHER` varchar(150) NOT NULL,
@@ -580,7 +604,7 @@ CREATE TABLE IF NOT EXISTS `online_registration` (
   `MOBILE_` varchar(15) NOT NULL,
   `EMAIL_` varchar(100) NOT NULL,
   `DOR_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -588,7 +612,7 @@ CREATE TABLE IF NOT EXISTS `online_registration` (
 -- Table structure for table `register_with_us`
 --
 
-CREATE TABLE IF NOT EXISTS `register_with_us` (
+CREATE TABLE `register_with_us` (
   `regid` varchar(25) NOT NULL,
   `FULLNAME` varchar(150) NOT NULL,
   `FATHER` varchar(150) NOT NULL,
@@ -623,7 +647,7 @@ CREATE TABLE IF NOT EXISTS `register_with_us` (
 -- Table structure for table `state_`
 --
 
-CREATE TABLE IF NOT EXISTS `state_` (
+CREATE TABLE `state_` (
   `NAME_` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -645,7 +669,7 @@ INSERT INTO `state_` (`NAME_`) VALUES
 -- Table structure for table `user_status`
 --
 
-CREATE TABLE IF NOT EXISTS `user_status` (
+CREATE TABLE `user_status` (
   `ST_ID` varchar(5) NOT NULL,
   `STATUS` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -667,7 +691,7 @@ INSERT INTO `user_status` (`ST_ID`, `STATUS`) VALUES
 -- Table structure for table `zone_`
 --
 
-CREATE TABLE IF NOT EXISTS `zone_` (
+CREATE TABLE `zone_` (
   `ID` int(11) NOT NULL,
   `ZONE` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -690,12 +714,12 @@ INSERT INTO `zone_` (`ID`, `ZONE`) VALUES
 -- Table structure for table `zone_region`
 --
 
-CREATE TABLE IF NOT EXISTS `zone_region` (
-`ID_` int(11) NOT NULL,
+CREATE TABLE `zone_region` (
+  `ID_` int(11) NOT NULL,
   `ZONE_` int(11) NOT NULL,
   `REGION` varchar(10) NOT NULL,
   `REG_NAME` varchar(50) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `zone_region`
@@ -743,7 +767,7 @@ INSERT INTO `zone_region` (`ID_`, `ZONE_`, `REGION`, `REG_NAME`) VALUES
 -- Table structure for table `_id_`
 --
 
-CREATE TABLE IF NOT EXISTS `_id_` (
+CREATE TABLE `_id_` (
   `ID_` int(11) NOT NULL,
   `regid_` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -760,155 +784,178 @@ INSERT INTO `_id_` (`ID_`, `regid_`) VALUES
 --
 
 --
+-- Indexes for table `activities`
+--
+ALTER TABLE `activities`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `bday_data`
 --
 ALTER TABLE `bday_data`
- ADD PRIMARY KEY (`BID`), ADD KEY `USERNAME_` (`USERNAME_`);
+  ADD PRIMARY KEY (`BID`),
+  ADD KEY `USERNAME_` (`USERNAME_`);
 
 --
 -- Indexes for table `fee`
 --
 ALTER TABLE `fee`
- ADD PRIMARY KEY (`feeID`), ADD KEY `regID` (`regID`,`date`), ADD KEY `userID` (`username`), ADD KEY `username` (`username`), ADD KEY `username_2` (`username`), ADD KEY `regID_2` (`regID`), ADD KEY `feetype` (`feetype`);
+  ADD PRIMARY KEY (`feeID`),
+  ADD KEY `regID` (`regID`,`date`),
+  ADD KEY `userID` (`username`),
+  ADD KEY `username` (`username`),
+  ADD KEY `username_2` (`username`),
+  ADD KEY `regID_2` (`regID`),
+  ADD KEY `feetype` (`feetype`);
 
 --
 -- Indexes for table `gallery`
 --
 ALTER TABLE `gallery`
- ADD PRIMARY KEY (`GL_ID`), ADD KEY `CATEG_ID` (`CATEG_ID`);
+  ADD PRIMARY KEY (`GL_ID`),
+  ADD KEY `CATEG_ID` (`CATEG_ID`);
 
 --
 -- Indexes for table `gallery_category`
 --
 ALTER TABLE `gallery_category`
- ADD PRIMARY KEY (`CATEG_ID`);
+  ADD PRIMARY KEY (`CATEG_ID`);
 
 --
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
- ADD PRIMARY KEY (`USERNAME_`), ADD KEY `USER_STATUS` (`USER_STATUS`);
+  ADD PRIMARY KEY (`USERNAME_`),
+  ADD KEY `USER_STATUS` (`USER_STATUS`);
 
 --
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
- ADD PRIMARY KEY (`ID_`);
+  ADD PRIMARY KEY (`ID_`);
 
 --
 -- Indexes for table `newsevents`
 --
 ALTER TABLE `newsevents`
- ADD PRIMARY KEY (`ID`), ADD KEY `STATUS` (`STATUS`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `STATUS` (`STATUS`);
 
 --
 -- Indexes for table `newsletter`
 --
 ALTER TABLE `newsletter`
- ADD PRIMARY KEY (`NID`), ADD KEY `USERNAME_` (`USERNAME_`);
+  ADD PRIMARY KEY (`NID`),
+  ADD KEY `USERNAME_` (`USERNAME_`);
 
 --
 -- Indexes for table `news_id_`
 --
 ALTER TABLE `news_id_`
- ADD PRIMARY KEY (`ID_`);
+  ADD PRIMARY KEY (`ID_`);
 
 --
 -- Indexes for table `online_enquiry`
 --
 ALTER TABLE `online_enquiry`
- ADD PRIMARY KEY (`ENQ_ID`);
+  ADD PRIMARY KEY (`ENQ_ID`);
 
 --
 -- Indexes for table `online_registration`
 --
 ALTER TABLE `online_registration`
- ADD PRIMARY KEY (`regid`);
+  ADD PRIMARY KEY (`regid`);
 
 --
 -- Indexes for table `register_with_us`
 --
 ALTER TABLE `register_with_us`
- ADD PRIMARY KEY (`regid`), ADD KEY `USERNAME_` (`USERNAME_`);
+  ADD PRIMARY KEY (`regid`),
+  ADD KEY `USERNAME_` (`USERNAME_`);
 
 --
 -- Indexes for table `user_status`
 --
 ALTER TABLE `user_status`
- ADD PRIMARY KEY (`ST_ID`);
+  ADD PRIMARY KEY (`ST_ID`);
 
 --
 -- Indexes for table `zone_`
 --
 ALTER TABLE `zone_`
- ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `zone_region`
 --
 ALTER TABLE `zone_region`
- ADD PRIMARY KEY (`ID_`);
+  ADD PRIMARY KEY (`ID_`);
 
 --
 -- Indexes for table `_id_`
 --
 ALTER TABLE `_id_`
- ADD PRIMARY KEY (`ID_`);
+  ADD PRIMARY KEY (`ID_`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `activities`
+--
+ALTER TABLE `activities`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `bday_data`
 --
 ALTER TABLE `bday_data`
-MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `fee`
 --
 ALTER TABLE `fee`
-MODIFY `feeID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+  MODIFY `feeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-MODIFY `GL_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
+  MODIFY `GL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `gallery_category`
 --
 ALTER TABLE `gallery_category`
-MODIFY `CATEG_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `CATEG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `newsevents`
 --
 ALTER TABLE `newsevents`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
+  MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `online_enquiry`
 --
 ALTER TABLE `online_enquiry`
-MODIFY `ENQ_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ENQ_ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `online_registration`
 --
 ALTER TABLE `online_registration`
-MODIFY `regid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `regid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `zone_region`
 --
 ALTER TABLE `zone_region`
-MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
+  MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- Constraints for dumped tables
 --
@@ -917,7 +964,7 @@ MODIFY `ID_` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 -- Constraints for table `login`
 --
 ALTER TABLE `login`
-ADD CONSTRAINT `usrstatus_for_login` FOREIGN KEY (`USER_STATUS`) REFERENCES `user_status` (`ST_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `usrstatus_for_login` FOREIGN KEY (`USER_STATUS`) REFERENCES `user_status` (`ST_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
