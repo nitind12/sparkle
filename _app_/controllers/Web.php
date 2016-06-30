@@ -13,7 +13,7 @@ class Web extends CI_Controller {
         $data['desc_'] = _SCHOOL_;
         $data['title'] = _SCHOOL_;
 
-        $data['bday_'] = $this->mm->students_bday_today();
+        $data['bday_'] = $this->mm->students_bday_this_week(7);
         $data['news_'] = $this->mm->get_latest_news(7);
 
         $this->load->view('templates/header', $data);

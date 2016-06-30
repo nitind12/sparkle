@@ -51,6 +51,26 @@ class My_model extends CI_Model {
         return $query->result();
     }
 
+    function students_bday_this_week($diff_) {
+        $datetime = new DateTime(date('Y/m/d'));
+        $datetime->modify('+'.$diff_.' day');
+        $next7thdaydate= $datetime->format('Y-m-d');
+        $str_dt = explode('-',$next7thdaydate);
+
+        $dt_ = $str_dt[2];
+        $mnth_ = $str_dt[1];
+        $yr_ = $str_dt[0];
+        $dateupto = $yr_.'/'.$mnth_.'/'.$dt_;
+
+        $this->db->where('DATE_FORMAT(CONCAT('.date('Y').', "/",MONTH(DOB),"/",DAY(DOB)),"%Y/%m/%d") >=', date('Y/m/d'));
+        $this->db->where('DATE_FORMAT(CONCAT('.date('Y').', "/",MONTH(DOB),"/",DAY(DOB)),"%Y/%m/%d") <=', $dateupto);
+        $this->db->where('STATUS', 1);
+        $this->db->order_by('NAME_');
+        $query = $this->db->get('bday_data');
+        
+        return $query->result();
+    }
+    
     function feedNews_() {
 
         $data = array(

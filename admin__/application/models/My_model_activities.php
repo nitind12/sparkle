@@ -9,42 +9,42 @@ class My_model_activities extends CI_Model {
     }
 
     function feedactivity(){
-        $title_ = $this->input->post('txtTitle');
-        $brief_ = $this->input->post('txtBriefDesc');
-        $date_of_activity = $this->input->post('txtDateofActivity');
+    	$title_ = $this->input->post('txtTitle');
+    	$brief_ = $this->input->post('txtBriefDesc');
+    	$date_of_activity = $this->input->post('txtDateofActivity');
 
-        $data = array(
-            'TITLE_' => $title_,
-            'BRIEF_' => $brief_,
-            'DET_PATH' => 'x',
-            'PICTURE_PATH' => 'x',
-            'DATE_OF_ACTIVITY' => $date_of_activity,
-            'DATE_' => date('Y-m-d H:i:s'),
-            'STATUS_' => 1,
-        );
-        $query = $this->db->insert('activities', $data);
+    	$data = array(
+    		'TITLE_' => $title_,
+    		'BRIEF_' => $brief_,
+    		'DET_PATH' => 'x',
+    		'PICTURE_PATH' => 'x',
+    		'DATE_OF_ACTIVITY' => $date_of_activity,
+    		'DATE_' => date('Y-m-d H:i:s'),
+    		'STATUS_' => 1,
+    	);
+    	$query = $this->db->insert('activities', $data);
 
-        if($query == TRUE){
-            $id__ = $this->db->insert_id();
-            $path_1 = $this->upload_activity_file($id__, 'txtInputFileDescription');
-            $path_2 = $this->upload_activity_photo($id__, 'txtInputFilePicture');
+    	if($query == TRUE){
+    		$id__ = $this->db->insert_id();
+    		$path_1 = $this->upload_activity_file($id__, 'txtInputFileDescription');
+    		$path_2 = $this->upload_activity_photo($id__, 'txtInputFilePicture');
 
-            $data_ = array(
-                'DET_PATH' => $path_1,
-                'PICTURE_PATH' => $path_2
-            );
+    		$data_ = array(
+    			'DET_PATH' => $path_1,
+    			'PICTURE_PATH' => $path_2
+    		);
             $this->db->where('ID', $id__);
-            $query = $this->db->update('activities', $data_);
-            if($query == TRUE){
-                $bool_ = array('res_'=>TRUE, 'msg_'=>'Activity Submitted Successfully.');
-            } else {
-                $bool_ = array('res_'=>FALSE, 'msg_'=>'Activity Submitted Successfully without uploading any file.');
-            }
-        } else {
-            $bool_ = array('res_'=>FALSE, 'msg_'=>'Some Server Error !! Please try again.');
-        }
+    		$query = $this->db->update('activities', $data_);
+    		if($query == TRUE){
+    			$bool_ = array('res_'=>TRUE, 'msg_'=>'Activity Submitted Successfully.');
+    		} else {
+    			$bool_ = array('res_'=>FALSE, 'msg_'=>'Activity Submitted Successfully without uploading any file.');
+    		}
+    	} else {
+    		$bool_ = array('res_'=>FALSE, 'msg_'=>'Some Server Error !! Please try again.');
+    	}
 
-        return $bool_;
+    	return $bool_;
     }
 
     function upload_activity_file($id__, $file_name) {
@@ -88,16 +88,16 @@ class My_model_activities extends CI_Model {
     }
 
     function get_active_activities(){
-        $this->db->where('STATUS_', 1);
-        $query = $this->db->get('activities');
+    	$this->db->where('STATUS_', 1);
+    	$query = $this->db->get('activities');
 
-        return $query->result();
+    	return $query->result();
     }
     function get_deactive_activities(){
-        $this->db->where('STATUS_', 0);
-        $query = $this->db->get('activities');
+    	$this->db->where('STATUS_', 0);
+    	$query = $this->db->get('activities');
 
-        return $query->result();
+    	return $query->result();
     }
     function get_activity_detail($id_){
         $this->db->where('ID', $id_);
@@ -106,12 +106,12 @@ class My_model_activities extends CI_Model {
         return $query->row();   
     }
     function active_deactive_activity($id_, $st_){
-        $data = array(
-            'STATUS_' => $st_
-        );
-        $this->db->where('ID', $id_);
-        $query = $this->db->update('activities', $data);
-        return $query;
+    	$data = array(
+    		'STATUS_' => $st_
+    	);
+    	$this->db->where('ID', $id_);
+    	$query = $this->db->update('activities', $data);
+    	return $query;
     }
     function updateactivity($id_){
         $title_ = $this->input->post('txtTitle');
