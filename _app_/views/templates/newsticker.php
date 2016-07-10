@@ -28,7 +28,7 @@
                                     <div style="font-family: Arial;font-size: 15px;"><?php echo $item->NEWS; ?></div>
                                     <?php if($item->PATH_ATTACH != 'x'){ ?>
                                     <div style="font-family: Arial; font-size: 10px">
-                                            <a href="<?php echo base_url('_assets_/newsdetail/'.$item->PATH_ATTACH);?>" style="color: #ff5000" target="_blank">click here for detail...</a>
+                                            <a href="<?php echo ADMIN___ . '/_assets_/newsdetail/'.$item->PATH_ATTACH;?>" style="color: #ff5000" target="_blank">click here for detail...</a>
                                     </div>
                                     <?php } ?>
                                 </li>

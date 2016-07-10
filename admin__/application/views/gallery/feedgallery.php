@@ -143,7 +143,7 @@
                                         <td style="width:45%"><a href="#"><?php echo strtoupper($item_->DESC); ?></a></td>
                                         <td align="right">
                                             <a href="#" id="changeHead_<?php echo $item_->CATEG_ID; ?>" onclick="change_Cat('<?php echo $item_->CATEG_ID; ?>', '<?php echo $item_->CATEGORY; ?>', '<?php echo $item_->DESC; ?>');"><i class="fa fa-pencil-square-o" style="color:#0066cc; font-size: 20px;"></i></a> | 
-                                            <a href="#"><i class="fa fa-times" style="color:#E13300; font-size: 20px;"></i></a>
+                                            <a href="<?php echo site_url('gallery/deleteCat/'.$item_->CATEG_ID); ?>"><i class="fa fa-times" style="color:#E13300; font-size: 20px;"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>

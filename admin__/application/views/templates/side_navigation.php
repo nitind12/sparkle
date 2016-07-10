@@ -13,9 +13,6 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-dropbox fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
                             <a href="<?php echo site_url('newsevents'); ?>"><i class="fa fa-dropbox fa-fw"></i> Feed News</a>
                         </li>
                         <li>

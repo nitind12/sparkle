@@ -9,6 +9,7 @@ function  loadgallery(dataCmb) {
         (btnDelete).on('click', function (e) {
             e.preventDefault();
             var id = $(this).attr('id');
+            alert(id);
             //$("#" + id + "g").hide();
             $.ajax({
                 url: site_url_ + "/gallery/deleteimg",

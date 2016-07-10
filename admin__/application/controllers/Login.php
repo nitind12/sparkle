@@ -28,7 +28,7 @@ class Login extends CI_Controller {
         if ($res_['bool_'] == TRUE) {
             $this->session->set_userdata('ussr_', $this->input->post('txtUsr'));
             $this->session->set_userdata('stss_', $res_['sts_']);
-            redirect('dashboard');
+            redirect('newsevents');
         } else {
             redirect('login');
         }

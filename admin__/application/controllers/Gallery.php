@@ -7,6 +7,9 @@ class Gallery extends CI_Controller {
     function __construct(){
         parent::__construct();
         $this->load->model('My_model_gallery', 'mmg');
+        if (! $this->session->userdata('ussr_')) {
+            redirect(__BACKTOSITE__);
+        }
     }
     function index() {
         $data['user___'] = $this->session->userdata('ussr_');
@@ -39,7 +42,8 @@ class Gallery extends CI_Controller {
     }
 
     function deleteCat($id_) {
-        $res_ = $this->mmg->active_inactive_($id_, $status);
+        $res_ = $this->mmg->deletecateg($id_);
+        $this->session->set_flashdata('_msg_', $res_['msg_']);
         redirect('gallery');
     }
 

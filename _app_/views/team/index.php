@@ -55,7 +55,7 @@
                             <?php foreach ($bday_ as $item) { ?>
                                 <li>
                                     <div class="banner-bg-bday img-rounded" style="color: #ffffff">
-                                        <img src="<?php echo base_url('_assets_/stud_photo/' . $item->PHOTO_); ?>" style="width: 97px" />
+                                        <img src="<?php echo ADMIN___ . '/_assets_/stud_photo/' . $item->PHOTO_; ?>" style="width: 97px" />
                                         <?php echo $item->NAME_; ?>
                                     </div>
                                 </li>
