@@ -18,44 +18,37 @@
 			
 			    });
 			</script>
+			<?php
+				$sliderText = array(
+					'high quality education for Children',
+					'high quality education for Children',
+					'high quality education for Children',
+					'high quality education for Children'
+				);
+				$img_ = array(1,2,6,3);
+			?>
 <div  id="top" class="callbacks_container" style="margin-top:100px;">
 			      <ul class="rslides" id="slider4">
+			      	<?php $i = 0; ?>
+			      	<?php foreach($sliderText as $item){?>
 			        <li>
-			          <img src="<?php echo base_url('_assets_/images/slide1.jpg');?>" alt="">
+			          <img src="<?php echo base_url('_assets_/images/slide'.$img_[$i].'.jpg');?>" alt="">
 			          <div class="caption">
 			          	<div class="slide-text-info">
-			          		<h1>providing</h1>
-			          		<label>high quality education for Children</label>
+			          		<div class="col-sm-6">
+			          			<h1>providing</h1>
+			          			<label><?php echo $item;?></label>
+			          		</div>
+			          		<div class="col-sm-6" style="vertical-align: top;">
+			          			<a href="<?php echo site_url('web/call_page/dos_donts/index/99'); ?>">
+			          				<img src="<?php echo base_url('_assets_/images/dos_donts.png');?>?ver=1.2" style="width: 392px; height:41px">
+			          			</a>
+			          		</div>
 			          	</div>
 			          </div>
 			        </li>
-			        <li>
-			          <img src="<?php echo base_url('_assets_/images/slide2.jpg');?>" alt="">
-			          <div class="caption">
-			          	<div class="slide-text-info">
-			          		<h1>providing</h1>
-			          		<label>high quality education for Children</label>
-			          	</div>
-			          </div>
-			        </li>
-                                <li>
-			          <img src="<?php echo base_url('_assets_/images/slide6.jpg');?>" alt="">
-			          <div class="caption">
-			          	<div class="slide-text-info">
-			          		<h1>providing</h1>
-			          		<label>high quality education for Children</label>
-			          	</div>
-			          </div>
-			        </li>
-                                <li>
-			          <img src="<?php echo base_url('_assets_/images/slide3.jpg');?>" alt="">
-			          <div class="caption">
-			          	<div class="slide-text-info">
-			          		<h1>providing</h1>
-			          		<label>high quality education for Children</label>
-			          	</div>
-			          </div>
-			        </li>
+			        <?php $i++; ?>
+			    	<?php }?>
 			      </ul>
 			    </div>
 			    <div class="clearfix"> </div>

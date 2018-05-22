@@ -65,7 +65,15 @@ class My_library {
                 $data['keys_'] = 'Kids Corner, Gallery, Contact, Address, Email, Little, India, Academy, School, Sparkle, Little Sparkel Academy, Motahaldu, Haldwani';
                 $data['desc_'] = 'Motive is to improve and maintain core academics in order to facilitate development of concepts and ideas within the young creative minds.';
                 $data['pagename'] = 'Message';
-                $data['page_phrase'] = 'Direcotr/Principal Message';
+                $data['page_phrase'] = 'Director/Principal Message';
+                $data['phrase_color'] = '#ffffff';
+                break;
+            case 99:
+                $data['tmp'] = 'Dos & Donts this summer';
+                $data['keys_'] = 'Kids Corner, Gallery, Contact, Address, Email, Little, India, Academy, School, Sparkle, Little Sparkel Academy, Motahaldu, Haldwani';
+                $data['desc_'] = 'Motive is to improve and maintain core academics in order to facilitate development of concepts and ideas within the young creative minds.';
+                $data['pagename'] = 'Do&apos;s & Don&apos;ts';
+                $data['page_phrase'] = 'DOs & DONTs/This summer';
                 $data['phrase_color'] = '#ffffff';
                 break;
             default:
