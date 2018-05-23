@@ -39,9 +39,9 @@
 			          			<h1>providing</h1>
 			          			<label><?php echo $item;?></label>
 			          		</div>
-			          		<div class="col-sm-6" style="vertical-align: top;">
+			          		<div class="col-sm-6" style="vertical-align: top; overflow: hidden">
 			          			<a href="<?php echo site_url('web/call_page/dos_donts/index/99'); ?>">
-			          				<img src="<?php echo base_url('_assets_/images/dos_donts.png');?>?ver=1.2" style="width: 392px; height:41px">
+			          				<img src="<?php echo base_url('_assets_/images/dos_donts.png');?>?ver=1.2" style="width: 392px; height:41px" class="img-responsive">
 			          			</a>
 			          		</div>
 			          	</div>
